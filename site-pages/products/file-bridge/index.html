@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050607">
-<meta name="description" content="NOBAD File Bridge: open, copy, edit and back up the files on your website or server, right from your PC. SFTP and FTP with verified host keys, side-by-side panes, two-way sync and safe deployments. In development. NOBAD: Software with a point of view.">
+<meta name="description" content="NOBAD File Bridge: open, copy, edit and back up the files on your website or server, right from your PC. SFTP and FTP with verified host keys, side-by-side panes, two-way sync and safe deployments. Free and open source for Windows and Linux. NOBAD: Software with a point of view.">
 <meta property="og:title" content="NOBAD File Bridge · NOBAD — Software with a point of view.">
-<meta property="og:description" content="NOBAD File Bridge: open, copy, edit and back up the files on your website or server, right from your PC. SFTP and FTP with verified host keys, side-by-side panes, two-way sync and safe deployments. In development. NOBAD: Software with a point of view.">
+<meta property="og:description" content="NOBAD File Bridge: open, copy, edit and back up the files on your website or server, right from your PC. SFTP and FTP with verified host keys, side-by-side panes, two-way sync and safe deployments. Free and open source for Windows and Linux. NOBAD: Software with a point of view.">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://nobad-platform.nobad-studio.workers.dev/products/file-bridge/">
 <meta property="og:image" content="https://nobad-platform.nobad-studio.workers.dev/assets/og-image.png">
@@ -36,13 +36,13 @@
 <header class="p-hero" id="overview">
   <div class="p-wrap p-hero-grid">
     <div>
-      <span class="p-kicker"><i aria-hidden="true"></i>In development · No download yet</span>
+      <span class="p-kicker"><i aria-hidden="true"></i>Version {{FB_VERSION}} · Windows &amp; Linux</span>
       <h1><span>NOBAD</span><span class="p-acc">File Bridge</span></h1>
       <p class="p-value">Open, copy, edit and back up the files on your website or server, right from your PC.</p>
       <p class="p-sub">Your own files on one side, the server's on the other. Connect safely, work as if the files were local, and ship changes with a way back.</p>
       <div class="p-cta">
-        <a class="p-btn" href="#status">See the status <span aria-hidden="true">↓</span></a>
-        <a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge/issues" rel="noopener">Follow progress ↗</a>
+        <a class="p-btn" href="#download">Download <span aria-hidden="true">↓</span></a>
+        <a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">What's new in {{FB_VERSION}} ↗</a>
       </div>
       <dl class="p-facts" aria-label="At a glance">
         <div><dt>Platform</dt><dd>Linux &amp; Windows</dd></div>
@@ -110,7 +110,7 @@
 <section class="p-sec alt" id="features" aria-labelledby="featuresTitle">
   <div class="p-wrap">
     <p class="p-label">Features</p>
-    <div class="p-head"><h2 id="featuresTitle">Built for the files you can't lose.</h2><p>What NOBAD File Bridge is being built to do. It's still in development, so treat this as the plan for its first release.</p></div>
+    <div class="p-head"><h2 id="featuresTitle">Built for the files you can't lose.</h2><p>What NOBAD File Bridge does, from its first release.</p></div>
     <div class="p-grid">
       <article class="p-feat"><span class="k">Browse</span><h3>Dual pane</h3><p>Local and remote files side by side, over SFTP or FTP/FTPS.</p></article>
       <article class="p-feat"><span class="k">Transfer</span><h3>Transfer queue</h3><p>Progress, retry and cancel. Files are written as .part until complete, so a cut-off transfer never looks finished.</p></article>
@@ -148,13 +148,15 @@
   </div>
 </section>
 
-<section class="p-sec" id="status" aria-labelledby="statusTitle">
+<section class="p-sec" id="download" aria-labelledby="downloadTitle">
   <div class="p-wrap">
-    <p class="p-label">Status</p>
-    <div class="p-head"><h2 id="statusTitle">Ships when it's ready.</h2><p>Not before. The work left before the first release is tracked in the open.</p></div>
+    <p class="p-label">Download</p>
+    <div class="p-head"><h2 id="downloadTitle">Version {{FB_VERSION}}.</h2><p>{{FB_SUMMARY}} Released {{FB_DATE}}, built by GitHub Actions from the public source, with signed build provenance.</p></div>
     <div class="p-status">
-      <div class="p-status-head p-hot"><div><h3>In development, no download yet.</h3><p>There's no installer yet. When the first release is ready, it will be listed here and on the NOBAD download desk.</p></div><span class="p-badge">● In development</span></div>
-      <div class="p-status-row"><div><h4>NOBAD File Bridge</h4><p>Linux &amp; Windows · no download yet</p></div><div class="p-actions"><a class="p-btn" href="https://github.com/nobad-studio/file-bridge/issues" rel="noopener">Follow progress ↗</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge" rel="noopener">Source ↗</a></div></div>
+      <div class="p-status-head"><div><h3>Free and open source, MIT License.</h3><p>Check the SHA-256 before you run a download. It isn't code-signed yet, so Windows SmartScreen may warn you: choose <b>More info &rarr; Run anyway</b> only after the checksum matches.</p></div><span class="p-badge">&#9679; Available</span></div>
+      <div class="p-status-row"><div><h4>Windows</h4><p>{{FB_WIN_PLATFORM}} &middot; {{FB_WIN_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_WIN_FILE}}">{{FB_WIN_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_WIN_URL}}" rel="noopener">Download installer</a></div></div>
+      <div class="p-status-row"><div><h4>Linux</h4><p>{{FB_DEB_PLATFORM}} &middot; {{FB_DEB_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_DEB_FILE}}">{{FB_DEB_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_DEB_URL}}" rel="noopener">Download .deb</a></div></div>
+      <div class="p-status-row"><div><h4>Check a download</h4><p>Windows (PowerShell): <code>Get-FileHash {{FB_WIN_FILE}}</code> &middot; Linux: <code>sha256sum {{FB_DEB_FILE}}</code> &middot; Provenance: <code>gh attestation verify &lt;file&gt; -R nobad-studio/file-bridge</code></p></div><div class="p-actions"><a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">Release notes &#8599;</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge" rel="noopener">Source &#8599;</a></div></div>
     </div>
   </div>
 </section>
@@ -164,7 +166,7 @@
     <p class="p-label">FAQ</p>
     <div class="p-head"><h2 id="faqTitle">Questions, answered.</h2><p>Anything else? Ask on <a class="p-link" href="https://github.com/nobad-studio/file-bridge/discussions" rel="noopener">GitHub Discussions</a>.</p></div>
     <div class="p-faq">
-      <details><summary>Can I download it yet?</summary><div class="a"><p>Not yet. NOBAD File Bridge is still being finished and hardened. When the first release is ready, it will appear on this page and on the <a href="/#downloads">download desk</a>.</p></div></details>
+      <details><summary>Where do I download it?</summary><div class="a"><p>From the <a href="#download">download section</a> above or the <a href="/#downloads">download desk</a>: an installer for Windows (<code>{{FB_WIN_FILE}}</code>: it installs for your user without an admin prompt, and File Bridge then appears in the Start menu) and a <code>.deb</code> for Ubuntu and Debian (<code>sudo apt install ./{{FB_DEB_FILE}}</code>). Version {{FB_VERSION}}.</p></div></details>
       <details><summary>Which computers will it run on?</summary><div class="a"><p>Linux and Windows.</p></div></details>
       <details><summary>Which servers can it connect to?</summary><div class="a"><p>Any server you can reach over SFTP (SSH) or FTP/FTPS: a website host, a VPS or your own machine.</p></div></details>
       <details><summary>Where are my passwords kept?</summary><div class="a"><p>On your computer: saved logins are encrypted with your master password, and saved secrets are kept in your operating system's keyring.</p></div></details>

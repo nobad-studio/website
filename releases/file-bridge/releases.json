@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "product": "nobad-file-bridge",
+  "latest": "0.5.1",
+  "releases": [
+    {
+      "version": "0.5.1",
+      "releaseDate": "2026-11-17",
+      "channel": "stable",
+      "summary": "Windows now gets a proper installer: Start menu entry, uninstaller, no admin prompt, and a WebView2 check.",
+      "notesUrl": "https://github.com/nobad-studio/file-bridge/releases/tag/v0.5.1",
+      "downloads": {
+        "windows": {
+          "file": "NobadFileBridge-Setup-0.5.1.exe",
+          "platform": "Windows 10 / 11 · 64-bit · installer",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.1/NobadFileBridge-Setup-0.5.1.exe",
+          "sha256": "e8575e75d7a77a71facb48fb79279395a624d6312f61be0343f74991489a1b14",
+          "size": "33.8 MB"
+        },
+        "linux": {
+          "file": "nobad-file-bridge_0.5.1_amd64.deb",
+          "platform": "Ubuntu 22.04+ / Debian 12+ · 64-bit · .deb",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.1/nobad-file-bridge_0.5.1_amd64.deb",
+          "sha256": "843cced2cfc04d3466d54a8e89f4528640b8ff335692f45420bfe800397f286f",
+          "size": "215.8 MB"
+        }
+      }
+    },
+    {
+      "version": "0.5.0",
+      "releaseDate": "2026-11-17",
+      "channel": "stable",
+      "summary": "First release: your files and the server's side by side, terminals, an editor, two-way sync, deployments with rollback, an encrypted vault and server tools.",
+      "notesUrl": "https://github.com/nobad-studio/file-bridge/releases/tag/v0.5.0",
+      "downloads": {
+        "windows": {
+          "file": "NobadFileBridge-0.5.0-windows-x64.zip",
+          "platform": "Windows 10 / 11 · 64-bit · unzip and run",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.0/NobadFileBridge-0.5.0-windows-x64.zip",
+          "sha256": "507d4212a56d9b95f92de2f070842b6fd84efd41e398cbf21bdc3cd079f9ce88",
+          "size": "41.9 MB"
+        },
+        "linux": {
+          "file": "nobad-file-bridge_0.5.0_amd64.deb",
+          "platform": "Ubuntu 22.04+ / Debian 12+ · 64-bit · .deb",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.0/nobad-file-bridge_0.5.0_amd64.deb",
+          "sha256": "3f69145b1d2393d1ee4ded8d6486b90989b62b7b64584d6820ba31b9181d1860",
+          "size": "215.8 MB"
+        }
+      }
+    }
+  ]
+}

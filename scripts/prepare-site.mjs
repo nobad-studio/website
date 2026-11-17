@@ -1,8 +1,8 @@
 // Builds the static NOBAD website into public/ (served by Cloudflare Workers static assets).
 //
 // Source of truth: plain HTML in site-pages/ (edit those files directly). Release details are filled in at build
-// time from releases/vpn/releases.json, so the download desk works without JavaScript and can never drift from
-// the manifest. The build fails on an unknown {{PLACEHOLDER}}.
+// time from releases/vpn/releases.json and releases/file-bridge/releases.json, so the download desk works without
+// JavaScript and can never drift from the manifests. The build fails on an unknown {{PLACEHOLDER}}.
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { extname, join, resolve, sep } from "node:path";
 
@@ -43,6 +43,41 @@ function releaseValues(manifest) {
   };
 }
 
+// NOBAD File Bridge: one release has a Windows zip and a Linux .deb, each with its own SHA-256.
+function fileBridgeValues(manifest) {
+  const releases = Array.isArray(manifest.releases) ? manifest.releases : [];
+  const cur = releases.find((r) => r.version === manifest.latest) || releases[0];
+  if (!cur) throw new Error("file-bridge releases.json has no release");
+  for (const k of ["version", "releaseDate", "notesUrl"]) {
+    if (!cur[k]) throw new Error(`file-bridge releases.json: latest release is missing "${k}"`);
+  }
+  const out = {
+    FB_VERSION: esc(cur.version),
+    FB_DATE: esc(cur.releaseDate),
+    FB_NOTES: esc(cur.notesUrl),
+    FB_SUMMARY: esc(cur.summary || "A published release is available. Review its notes and integrity details before installing."),
+  };
+  for (const [key, prefix] of [["windows", "FB_WIN"], ["linux", "FB_DEB"]]) {
+    const d = (cur.downloads || {})[key];
+    if (!d) throw new Error(`file-bridge releases.json: latest release has no ${key} download`);
+    for (const k of ["url", "sha256", "size", "file", "platform"]) {
+      if (!d[k]) throw new Error(`file-bridge releases.json: ${key} download is missing "${k}"`);
+    }
+    if (!/^https:\/\/github\.com\/nobad-studio\/file-bridge\/releases\/download\//.test(d.url)) {
+      throw new Error(`file-bridge releases.json: the ${key} url must be a GitHub Release asset of nobad-studio/file-bridge`);
+    }
+    if (!/^[0-9a-f]{64}$/.test(d.sha256)) throw new Error(`file-bridge releases.json: ${key} sha256 must be 64 lowercase hex digits`);
+    Object.assign(out, {
+      [`${prefix}_URL`]: esc(d.url), [`${prefix}_SHA256`]: esc(d.sha256), [`${prefix}_SIZE`]: esc(d.size),
+      [`${prefix}_FILE`]: esc(d.file), [`${prefix}_PLATFORM`]: esc(d.platform),
+    });
+  }
+  out.FB_HISTORY = releases.map((r) =>
+    `<div class="release-item"><span class="version">${esc(r.version)}</span><span>${esc(r.releaseDate)} · ${esc(r.summary)}</span><span class="muted">${esc(r.channel)}</span></div>`
+  ).join("");
+  return out;
+}
+
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const p = join(dir, entry.name);
@@ -67,9 +102,12 @@ for (const name of await readdir(resolve(root, "assets"))) {
 
 // 3. Release manifest, read by the download desk script as well
 const manifestText = await readFile(resolve(root, "releases/vpn/releases.json"), "utf8");
-const values = releaseValues(JSON.parse(manifestText));
+const fbManifestText = await readFile(resolve(root, "releases/file-bridge/releases.json"), "utf8");
+const values = { ...releaseValues(JSON.parse(manifestText)), ...fileBridgeValues(JSON.parse(fbManifestText)) };
 await mkdir(resolve(output, "releases/vpn"), { recursive: true });
 await writeFile(resolve(output, "releases/vpn/releases.json"), manifestText);
+await mkdir(resolve(output, "releases/file-bridge"), { recursive: true });
+await writeFile(resolve(output, "releases/file-bridge/releases.json"), fbManifestText);
 
 // 4. Fill release placeholders in every HTML page
 for await (const file of walk(output)) {
@@ -95,4 +133,4 @@ if (!commit) {
 if (!/^[0-9a-f]{7,40}$|^unknown$/.test(commit)) commit = "unknown";
 await writeFile(resolve(output, "build.json"), JSON.stringify({ commit, built: new Date().toISOString() }) + "\n");
 
-console.log(`NOBAD static site build complete (NOBAD VPN ${values.VPN_VERSION}).`);
+console.log(`NOBAD static site build complete (NOBAD VPN ${values.VPN_VERSION}, NOBAD File Bridge ${values.FB_VERSION}).`);

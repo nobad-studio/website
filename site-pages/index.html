@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ff4d00">
-  <meta name="description" content="NOBAD is an independent software studio making focused, open-source tools: NOBAD VPN for Windows, available now, and NOBAD File Bridge, a remote file manager in development. NOBAD: Software with a point of view.">
+  <meta name="description" content="NOBAD is an independent software studio making focused, open-source tools: NOBAD VPN for Windows, available now, and NOBAD File Bridge, a remote file manager for Windows and Linux. NOBAD: Software with a point of view.">
   <meta property="og:title" content="NOBAD — Software with a point of view.">
-  <meta property="og:description" content="NOBAD is an independent software studio making focused, open-source tools: NOBAD VPN for Windows, available now, and NOBAD File Bridge, a remote file manager in development. NOBAD: Software with a point of view.">
+  <meta property="og:description" content="NOBAD is an independent software studio making focused, open-source tools: NOBAD VPN for Windows, available now, and NOBAD File Bridge, a remote file manager for Windows and Linux. NOBAD: Software with a point of view.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nobad-platform.nobad-studio.workers.dev/">
   <meta property="og:image" content="https://nobad-platform.nobad-studio.workers.dev/assets/og-image.png">
@@ -880,7 +880,7 @@
           <div class="g-stats"><span><small>Latency</small>24 ms</span><span><small>Jitter</small>1.8 ms</span><span><small>Loss</small>0%</span></div>
         </div></div>
         <div class="glass g-diag" data-depth="34"><div class="glass-in">
-          <div class="g-top"><span>NOBAD File Bridge</span><span>In development</span></div>
+          <div class="g-top"><span>NOBAD File Bridge</span><span>v{{FB_VERSION}}</span></div>
           <div class="g-title">Transfer queue</div>
           <div class="g-rows">
             <div class="g-row"><span>Upload · progress</span><b>↑</b></div>
@@ -902,7 +902,7 @@
       </div>
       <h1 class="hero-title display" id="heroTitle">NO<span class="outline">BAD</span></h1>
       <p class="hero-subtitle">Tools with a point of view.<br>Software that gets out of your way.</p>
-      <p class="hero-plain">NOBAD is an independent studio making <b>focused, open-source software</b>. Two products so far: <b>NOBAD VPN</b> for Windows, available now, and <b>NOBAD File Bridge</b>, a file manager for remote servers, in development.</p>
+      <p class="hero-plain">NOBAD is an independent studio making <b>focused, open-source software</b>. Two products so far: <b>NOBAD VPN</b> for Windows, available now, and <b>NOBAD File Bridge</b>, a file manager for remote servers, for Windows and Linux.</p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="#products">See the products <span aria-hidden="true">&rarr;</span></a>
         <a class="btn btn-ghost" href="#about">New here? Start here</a>
@@ -910,7 +910,7 @@
       <div class="hero-avail" aria-label="About the studio">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>Open source on GitHub</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>NOBAD VPN · available</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>NOBAD File Bridge · in development</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>NOBAD File Bridge · v{{FB_VERSION}}</span>
       </div>
       <div class="hero-meta">
         <p>Based in<br>India / Online</p>
@@ -996,13 +996,13 @@
             <div class="product-card-foot"><span>Privacy / Network</span><a href="/products/vpn/" aria-label="Explore NOBAD VPN" class="product-arrow">↗</a></div>
           </article>
           <article class="product-card dark-card rv edge" id="file-bridge" style="--d:0.1s">
-            <div class="product-card-top"><span>02 / Files &amp; servers</span><span class="product-state">In development</span></div>
+            <div class="product-card-top"><span>02 / Files &amp; servers</span><span class="product-state">Available · v{{FB_VERSION}}</span></div>
             <div class="product-symbol" aria-hidden="true">
               <svg viewBox="0 0 220 220" fill="none"><rect x="14" y="40" width="88" height="140" rx="10" stroke="currentColor" stroke-width="5"/><rect x="118" y="40" width="88" height="140" rx="10" stroke="currentColor" stroke-width="5"/><path d="M30 70h56M30 96h44M30 122h52M134 70h56M134 96h40M134 122h50" stroke="currentColor" stroke-width="3"/><path d="M76 156h68M132 144l12 12-12 12" stroke="var(--orange)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>NOBAD<br>FILE BRIDGE</h3>
-            <p>A desktop file manager for remote servers. SSH/SFTP and FTP/FTPS in a dual local/remote pane, a transfer queue, two-way sync, remote editing with conflict detection and an encrypted credential vault. Being hardened before its first release.</p>
-            <div class="plat-chips" aria-label="Platforms"><span class="plat-chip off">Linux · in development</span><span class="plat-chip off">Windows · in development</span></div>
+            <p>A desktop file manager for remote servers. SSH/SFTP and FTP/FTPS in a dual local/remote pane, a transfer queue, two-way sync, remote editing with conflict detection and an encrypted credential vault. Terminals, deployments with rollback, and server tools too.</p>
+            <div class="plat-chips" aria-label="Platforms"><span class="plat-chip">Linux</span><span class="plat-chip">Windows</span></div>
             <div class="product-card-foot"><span>Files / Servers</span><a href="/products/file-bridge/" aria-label="Explore NOBAD File Bridge" class="product-arrow">↗</a></div>
           </article>
         </div>
@@ -1036,7 +1036,7 @@
               </div>
               <ul class="plat-apps">
                 <li><b>NOBAD VPN</b><span>v{{VPN_VERSION}} · {{VPN_SIZE}} · released {{VPN_DATE}}</span><em class="ok">Available</em></li>
-                <li><b>NOBAD File Bridge</b><span>Windows · no download yet</span><em class="pre">In development</em></li>
+                <li><b>NOBAD File Bridge</b><span>v{{FB_VERSION}} · {{FB_WIN_SIZE}} · released {{FB_DATE}}</span><em class="ok">Available</em></li>
               </ul>
               <div class="plat-actions">
                 <a class="plat-cta" href="products/vpn/#releases">Download for Windows <span aria-hidden="true">↗</span></a>
@@ -1047,7 +1047,7 @@
               <p class="plat-rest-title">Other systems</p>
               <ul class="os-list">
                 <li><svg viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="6" width="44" height="28" rx="3"/><path d="M4 40h56l-3 4H7l-3-4Z"/></svg><span class="os-name">macOS<small>Laptops and desktops</small></span><span class="os-state">Not yet</span></li>
-                <li><svg viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="52" height="40" rx="4"/><path d="m16 18 7 6-7 6M28 31h12"/></svg><span class="os-name">Linux<small>NOBAD File Bridge · no download yet</small></span><span class="os-state">In development</span></li>
+                <li><svg viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="52" height="40" rx="4"/><path d="m16 18 7 6-7 6M28 31h12"/></svg><span class="os-name">Linux<small>NOBAD File Bridge v{{FB_VERSION}} · .deb</small></span><span class="os-state">Available</span></li>
                 <li><svg viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="20" y="2" width="24" height="44" rx="5"/><path d="M29 40h6"/></svg><span class="os-name">Android<small>Phones and tablets</small></span><span class="os-state">Not yet</span></li>
                 <li><svg viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="20" y="2" width="24" height="44" rx="6"/><path d="M28 7h8"/></svg><span class="os-name">iPhone<small>iOS and iPadOS</small></span><span class="os-state">Not yet</span></li>
               </ul>
@@ -1111,9 +1111,9 @@
           </div>
           <div class="download-row rv" style="--d:0.08s">
             <div class="download-index">02 /</div>
-            <div class="download-name"><strong>NOBAD FILE BRIDGE</strong><small>Linux and Windows · In development · No download yet</small></div>
-            <div class="download-meta">Being hardened<br>before its first release</div>
-            <a class="download-action" href="/products/file-bridge/">See status <span>↗</span></a>
+            <div class="download-name"><strong>NOBAD FILE BRIDGE {{FB_VERSION}}</strong><small>Windows (installer, {{FB_WIN_SIZE}}) and Linux (.deb, {{FB_DEB_SIZE}}) · Download and how to verify on the product page</small></div>
+            <div class="download-meta">Released {{FB_DATE}}<br>Not code-signed yet</div>
+            <a class="download-action" href="/products/file-bridge/#download">Get it <span>↗</span></a>
           </div>
         </div>
         <dl class="receipt rv" style="margin:18px 0 0;max-width:none" aria-label="Facts about the latest build">

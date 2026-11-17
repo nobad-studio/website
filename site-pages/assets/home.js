@@ -6,7 +6,7 @@
     // Products and their maintainers, shown in "Built in the open". Adding a product or a maintainer is one line here.
     const NOBAD_PRODUCTS = [
       { product: "NOBAD VPN", page: "/products/vpn/", maintainer: "@AryanGupta-234", status: "Available" },
-      { product: "NOBAD File Bridge", page: "/products/file-bridge/", maintainer: "@harshRaj1601", status: "In development" },
+      { product: "NOBAD File Bridge", page: "/products/file-bridge/", maintainer: "@harshRaj1601", status: "Available" },
     ];
     (() => {
       const body = document.getElementById("roster");

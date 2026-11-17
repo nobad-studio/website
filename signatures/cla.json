@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "harshRaj1601",
+      "id": 100475813,
+      "comment_id": 6947955649,
+      "created_at": "2026-11-17T12:24:32Z",
+      "repoId": 1460518900,
+      "pullRequestNo": 6
+    }
+  ]
 }

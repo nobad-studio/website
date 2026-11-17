@@ -185,3 +185,9 @@ pre code { padding: 0; border: 0; background: none; white-space: pre; -webkit-us
 .legal-meta a:hover { transform: translateY(-2px); background: #000; color: var(--orange); }
 
 @media (prefers-reduced-motion: reduce) { .toc a, .toc a::before, .contact-card, .legal-meta a { transition: none !important; } .contact-card:hover, .legal-meta a:hover { transform: none; } }
+
+/* ==== refined scale (2026-11-17): about 30% smaller headings, narrower content ==== */
+:root { --max: 1240px; }
+.legal-hero h1 { font-size: clamp(48px, 7.5vw, 112px); }
+.legal-lede { font-size: clamp(16px, 1.4vw, 19px); }
+.footer-brand { font-size: clamp(32px, 3.8vw, 48px); }

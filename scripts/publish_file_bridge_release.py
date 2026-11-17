@@ -5,7 +5,7 @@ Run it AFTER the File Bridge release workflow has published the GitHub Release:
 
     python scripts/publish_file_bridge_release.py 0.5.0 "First release: files side by side, terminals, sync, deployments"
 
-It reads the release from GitHub's public API, and for each download (the Windows zip and the Linux .deb) takes
+It reads the release from GitHub's public API, and for each download (the Windows installer and the Linux .deb) takes
 the size and the SHA-256 that GitHub computed for the uploaded asset, checks it against the published .sha256 file,
 and puts the entry first in releases.json. Nothing is copied into the repository. Review the diff, commit and push:
 the site rebuilds and shows the new version.
@@ -26,7 +26,8 @@ MANIFEST = ROOT / "releases" / "file-bridge" / "releases.json"
 SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 # download key -> (file name for a version, what it runs on)
 DOWNLOADS = {
-    "windows": (lambda v: f"NobadFileBridge-{v}-windows-x64.zip", "Windows 10 / 11 · 64-bit · unzip and run"),
+    # 0.5.0 shipped a zip (it stays listed as published); from 0.5.1 Windows gets an installer.
+    "windows": (lambda v: f"NobadFileBridge-Setup-{v}.exe", "Windows 10 / 11 · 64-bit · installer"),
     "linux": (lambda v: f"nobad-file-bridge_{v}_amd64.deb", "Ubuntu 22.04+ / Debian 12+ · 64-bit · .deb"),
 }
 

@@ -847,6 +847,32 @@
     .p-js .section-index.rv { transform: translate3d(-12px, 0, 0); }
     .p-js .section-index.rv.in { transform: none; }
     @media (prefers-reduced-motion: reduce) { .p-js .section-index.rv { transform: none; } }
+
+    /* ==== refined scale (2026-11-17): about 25-30% smaller type and space, narrower content ==== */
+    :root { --max: 1240px; }
+    .section-pad { padding-block: clamp(52px, 5.5vw, 88px); }
+    .hero { min-height: 600px; }
+    .hero-title { font-size: clamp(60px, 9vw, 132px); }
+    .hero-subtitle { max-width: 640px; font-size: clamp(15px, 1.35vw, 18px); }
+    .marquee-band { padding-block: clamp(12px, 1.8vw, 24px); }
+    .marquee-text { font-size: 3.4vw; }
+    .g-diag { top: 26%; }   /* the shorter hero put the card over the top line */
+    .g-kill { top: 62%; }
+    .intro h2, .products-head h2, .services-head h2, .downloads-head h2, .collab h2 { font-size: clamp(32px, 4vw, 58px); }
+    .intro-copy p { font-size: clamp(15px, 1.2vw, 17px); }
+    .explain h3 { font-size: clamp(19px, 1.6vw, 23px); }
+    .product-card { min-height: 290px; }
+    .product-card h3 { font-size: clamp(28px, 2.8vw, 40px); }
+    .platforms-head h3 { font-size: clamp(24px, 2.6vw, 36px); }
+    .service-main h3 { font-size: clamp(24px, 3vw, 42px); }
+    .download-name strong { font-size: clamp(18px, 1.9vw, 24px); }
+    .manifesto h2 { font-size: clamp(36px, 4.6vw, 68px); }
+    .manifesto { padding-bottom: clamp(120px, 11vw, 170px); }
+    .ghost-type span { font-size: clamp(72px, 9vw, 140px); }
+    .cta { padding: clamp(60px, 7vw, 100px) var(--gutter); }
+    .cta h2 { font-size: clamp(40px, 5.6vw, 84px); margin-bottom: 28px; }
+    .cta-badge { width: 76px; height: 76px; }
+    .footer-brand { font-size: clamp(32px, 3.8vw, 48px); }
   </style>
 <script src="/assets/smooth.js" defer></script>
 <link rel="stylesheet" href="/assets/site.css">

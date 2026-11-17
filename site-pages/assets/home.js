@@ -6,6 +6,8 @@
     // Products and their maintainers, shown in "Built in the open". Adding a product or a maintainer is one line here.
     const NOBAD_PRODUCTS = [
       { product: "NOBAD VPN", page: "/products/vpn/", maintainer: "@AryanGupta-234", status: "Available" },
+      // NOBAD Find's status comes from the build (releases/find/releases.json), via data-find-status on #roster.
+      { product: "NOBAD Find", page: "/products/find/", maintainer: "@AryanGupta-234", status: document.getElementById("roster")?.dataset.findStatus || "In development" },
       { product: "NOBAD File Bridge", page: "/products/file-bridge/", maintainer: "@harshRaj1601", status: "In development" },
     ];
     (() => {

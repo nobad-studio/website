@@ -3,7 +3,7 @@
 **Software with a point of view.** The website of the NOBAD studio: the home page, a page per product, the download
 desk for NOBAD VPN, support, privacy and the code-signing policy.
 
-Live at **https://nobad-platform.aassworld99.workers.dev/** (Cloudflare Workers static assets, deployed from `main`).
+Live at **https://nobad-platform.nobad-studio.workers.dev/** (Cloudflare Workers static assets, deployed from `main`).
 
 ## Build
 ```

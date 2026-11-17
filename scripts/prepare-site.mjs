@@ -20,7 +20,8 @@ function releaseValues(manifest) {
   for (const k of ["version", "releaseDate", "downloadUrl", "notesUrl", "sha256", "size"]) {
     if (!cur[k]) throw new Error(`releases.json: latest release is missing "${k}"`);
   }
-  if (!/^https:\/\/github\.com\/AryanGupta-234\/Nobad\/releases\/download\//.test(cur.downloadUrl)) {
+  // releases up to 1.6.1 are under the old owner; new ones under nobad-studio/Nobad-VPN (moved 2026-11-17)
+  if (!/^https:\/\/github\.com\/(AryanGupta-234\/Nobad|nobad-studio\/Nobad-VPN)\/releases\/download\/vpn-v/.test(cur.downloadUrl)) {
     throw new Error("releases.json: downloadUrl must be a GitHub Release asset of this repository");
   }
   if (!/^[0-9a-f]{64}$/.test(cur.sha256)) throw new Error("releases.json: sha256 must be 64 lowercase hex digits");

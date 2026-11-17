@@ -1,8 +1,31 @@
 {
   "schemaVersion": 1,
   "product": "nobad-file-bridge",
-  "latest": "0.5.1",
+  "latest": "0.5.2",
   "releases": [
+    {
+      "version": "0.5.2",
+      "releaseDate": "2026-11-17",
+      "channel": "stable",
+      "summary": "New app icon: the NOBAD mark with a blue \"n\", on the installer, Start menu, taskbar and Linux launcher.",
+      "notesUrl": "https://github.com/nobad-studio/file-bridge/releases/tag/v0.5.2",
+      "downloads": {
+        "windows": {
+          "file": "NobadFileBridge-Setup-0.5.2.exe",
+          "platform": "Windows 10 / 11 · 64-bit · installer",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.2/NobadFileBridge-Setup-0.5.2.exe",
+          "sha256": "a3c176b938ed0c260640becc21592a4d9b9a6cda2c7685c3e6a9d20886d40021",
+          "size": "32.3 MB"
+        },
+        "linux": {
+          "file": "nobad-file-bridge_0.5.2_amd64.deb",
+          "platform": "Ubuntu 22.04+ / Debian 12+ · 64-bit · .deb",
+          "url": "https://github.com/nobad-studio/file-bridge/releases/download/v0.5.2/nobad-file-bridge_0.5.2_amd64.deb",
+          "sha256": "30e751a18a05f6c5e84f20f31efa3f471c4ddd766469d0f4aab3a65784235ea7",
+          "size": "214.4 MB"
+        }
+      }
+    },
     {
       "version": "0.5.1",
       "releaseDate": "2026-11-17",

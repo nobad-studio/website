@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.6.1",
+  "latest": "0.6.2",
   "releases": [
+    {
+      "version": "0.6.2",
+      "releaseDate": "2026-11-18",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Searches like 'pdf in downloads having appreciation' now find the files with that word inside, and Enter keeps the window up.",
+      "downloadUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/download/find-v0.6.2/NobadFind-Setup-0.6.2.exe",
+      "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.6.2",
+      "sha256": "52043d1673e998439d397f16724317b3eb9f79faeb3e064b9eb4b3a7604e6015",
+      "size": "33.5 MB"
+    },
     {
       "version": "0.6.1",
       "releaseDate": "2026-11-18",

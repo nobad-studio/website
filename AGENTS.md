@@ -9,6 +9,7 @@ deployed by Cloudflare Workers Builds (Worker `nobad-platform`) from `main`. Rea
 - CSP: no inline scripts. Untrusted data (release manifest, network) is always escaped before it reaches HTML.
 - `releases/vpn/releases.json` is updated only by `scripts/publish_vpn_release.py` after a CI release, with the
   CI-built installer's SHA-256. Never hand-edit checksums.
+- `releases/find/releases.json` (NOBAD Find) works the same way, through `scripts/publish_find_release.py`.
 - After pushing `main`, check that `https://nobad-platform.nobad-studio.workers.dev/build.json` shows your commit.
 - `main` is protected. Never edit rulesets, bypass lists or organization settings: ask the maintainer.
 - Look at the site with a local build and headless Edge screenshots; don't guess layouts.

@@ -1,6 +1,6 @@
 /* NOBAD product pages: one shared component system (hero, pillars, feature grid, steps, trust band,
    status / download block, FAQ). Each page sets its own accent on <body class="pg ...">:
-     .pg       NOBAD orange, used by every product (NOBAD VPN, NOBAD File Bridge)
+     .pg       NOBAD orange, used by every product (NOBAD VPN, NOBAD Find, NOBAD File Bridge)
    Loaded before /assets/site.css, which owns the navigation and footer. */
 .pg {
   --ac: var(--nb-o, #ff4d00); --ac-rgb: 255, 77, 0; --ac-ink: #000;

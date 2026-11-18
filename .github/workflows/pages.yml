@@ -22,11 +22,13 @@ jobs:
       - name: Build static website
         run: npm run build
       - name: Validate release manifest
-        run: python -m json.tool public/releases/vpn/releases.json > /dev/null
+        run: |
+          python -m json.tool public/releases/vpn/releases.json > /dev/null
+          python -m json.tool public/releases/find/releases.json > /dev/null
       - name: Verify generated pages
         run: |
-          for f in index.html products/vpn/index.html products/file-bridge/index.html code-signing-policy/index.html privacy/index.html support/index.html 404.html \
-                   _headers robots.txt sitemap.xml favicon.ico releases/vpn/releases.json \
+          for f in index.html products/vpn/index.html products/find/index.html products/file-bridge/index.html code-signing-policy/index.html privacy/index.html support/index.html 404.html \
+                   _headers robots.txt sitemap.xml favicon.ico releases/vpn/releases.json releases/find/releases.json \
                    assets/nobad-logo.png assets/nobad-logo-light.png assets/og-image.png assets/legal.css; do
             test -s "public/$f" || { echo "missing public/$f"; exit 1; }
           done
@@ -35,6 +37,7 @@ jobs:
           grep -Fq 'href="/support/"' public/index.html
           grep -Fq 'Code signing policy' public/code-signing-policy/index.html
           grep -Fq 'src="/assets/nobad-logo-light.png"' public/products/vpn/index.html
+          grep -Fq 'href="/products/find/"' public/index.html
           grep -Fq 'Content-Security-Policy' public/_headers
           # internal files must not be published
           test ! -e public/docs && test ! -e public/assets/README.md
@@ -54,6 +57,11 @@ jobs:
           for page in ("index.html", "products/vpn/index.html"):
               if m["latest"] not in (pub / page).read_text(encoding="utf-8"):
                   bad.append(f"{page}: doesn't show the latest version {m['latest']}")
+          f = json.loads((pub / "releases/find/releases.json").read_text(encoding="utf-8"))
+          if f.get("latest"):
+              for page in ("index.html", "products/find/index.html"):
+                  if f["latest"] not in (pub / page).read_text(encoding="utf-8"):
+                      bad.append(f"{page}: doesn't show the latest NOBAD Find version {f['latest']}")
           if bad:
               print("\n".join(bad)); sys.exit(1)
           print("pages are current")

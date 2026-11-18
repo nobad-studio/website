@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.6.2",
+  "latest": "0.7.0",
   "releases": [
+    {
+      "version": "0.7.0",
+      "releaseDate": "2026-11-18",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Smart resource governor (games alone no longer pause indexing), full transparency on the Indexing page, quick find bar on Ctrl+Alt+Space, splash, new home and Settings, and closing now stops every worker.",
+      "downloadUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/download/find-v0.7.0/NobadFind-Setup-0.7.0.exe",
+      "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.7.0",
+      "sha256": "87183305d429d3546c250c05d4eeb584623e488a56b6ea544f0d7e1774e84f34",
+      "size": "34.8 MB"
+    },
     {
       "version": "0.6.2",
       "releaseDate": "2026-11-18",

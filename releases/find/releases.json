@@ -14,18 +14,6 @@
       "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.6.1",
       "sha256": "178a3d043f3edb7d0b9c80972561c123aded8286d5fab3a9abec7232aa09c3d2",
       "size": "33.5 MB"
-    },
-    {
-      "version": "0.6.0",
-      "releaseDate": "2026-11-17",
-      "channel": "stable",
-      "platform": "Windows 10 (1809+) / 11",
-      "architecture": "x64",
-      "summary": "First release: private offline search for your own files, by name, words inside, meaning and photos.",
-      "downloadUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/download/find-v0.6.0/NobadFind-Setup-0.6.0.exe",
-      "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.6.0",
-      "sha256": "0dde58b5d50e4a793a638551e64bf22a979c90d1d78a5652da2514331147c05d",
-      "size": "33.5 MB"
     }
   ]
 }

@@ -172,7 +172,24 @@
   </div>
 </section>
 
-<section class="p-sec p-ghost alt" id="faq" aria-labelledby="faqTitle">
+<section class="p-sec alt" id="details" aria-labelledby="detailsTitle">
+  <div class="p-wrap">
+    <p class="p-label">Compatibility &amp; disclosure</p>
+    <div class="p-head"><h2 id="detailsTitle">The details.</h2><p>What it needs, what it touches and what it connects to. Anything that isn't verified is left out rather than guessed.</p></div>
+    <dl class="p-specs">
+      <div><dt>Supported systems</dt><dd>Windows 10 and Windows 11 (64-bit), using Edge WebView2, which is part of Windows. Ubuntu 22.04+ and Debian 12+ (64-bit).</dd></div>
+      <div><dt>Install</dt><dd>Windows: a per-user installer with no admin prompt. It isn't code-signed yet, so Windows SmartScreen warns: choose <b>More info</b> → <b>Run anyway</b> once the SHA-256 matches. Linux: <code>sudo apt install ./{{FB_DEB_FILE}}</code>.</dd></div>
+      <div><dt>Connects with</dt><dd>SSH/SFTP, FTP and FTPS (explicit or implicit TLS, with certificate checks). Plain FTP is marked insecure. Hosting panels and cloud storage work only through one of these.</dd></div>
+      <div><dt>Saved logins</dt><dd>Server passwords and keys are kept in your system keyring. Other secrets go in a credential vault locked by your master password (Argon2id, AES-GCM). Secrets are never written to its database or logs in plain text.</dd></div>
+      <div><dt>Your data</dt><dd>Profiles, history and settings stay on your computer. Uninstalling keeps them unless you choose to delete them.</dd></div>
+      <div><dt>Permissions</dt><dd>Runs as your normal account. It only changes files on a server when you ask it to, and shows a preview before sync and deployments.</dd></div>
+      <div><dt>Outbound connections</dt><dd>Only the servers you add. No account, no telemetry.</dd></div>
+      <div><dt>Support</dt><dd>Bugs and questions: <a href="https://github.com/nobad-studio/file-bridge/issues">GitHub Issues</a>. Security problems: report them privately via <a href="https://github.com/nobad-studio/file-bridge/security/advisories/new">private vulnerability reporting</a>. Anything else: <a href="mailto:ludmj99@gmail.com">ludmj99@gmail.com</a>.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="p-sec p-ghost" id="faq" aria-labelledby="faqTitle">
   <div class="p-wrap">
     <p class="p-label">FAQ</p>
     <div class="p-head"><h2 id="faqTitle">Questions, answered.</h2><p>Anything else? Ask on <a class="p-link" href="https://github.com/nobad-studio/file-bridge/discussions" rel="noopener">GitHub Discussions</a>.</p></div>

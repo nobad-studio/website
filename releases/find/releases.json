@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.6.0",
+  "latest": "0.6.1",
   "releases": [
+    {
+      "version": "0.6.1",
+      "releaseDate": "2026-11-18",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Setup and uninstall no longer look stuck, the Start menu opens a running copy, a Quit button in Settings, and the NOBAD mark as its icon.",
+      "downloadUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/download/find-v0.6.1/NobadFind-Setup-0.6.1.exe",
+      "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.6.1",
+      "sha256": "178a3d043f3edb7d0b9c80972561c123aded8286d5fab3a9abec7232aa09c3d2",
+      "size": "33.5 MB"
+    },
     {
       "version": "0.6.0",
       "releaseDate": "2026-11-17",

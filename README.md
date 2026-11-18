@@ -1,16 +1,17 @@
 # NOBAD website
 
 **Software with a point of view.** The website of the NOBAD studio: the home page, a page per product, the download
-desks for NOBAD VPN and NOBAD Find, support, privacy and the code-signing policy.
+desks for NOBAD VPN, NOBAD Find and NOBAD File Bridge, support, privacy and the code-signing policy.
 
 Live at **https://nobad-platform.nobad-studio.workers.dev/** (Cloudflare Workers static assets, deployed from `main`).
 
 ## Build
 ```
-npm run build        # site-pages/ + releases/{vpn,find}/releases.json -> public/ (generated, not committed)
+npm run build        # site-pages/ + releases/{vpn,find,file-bridge}/releases.json -> public/ (generated, not committed)
 ```
 Plain HTML, CSS and JavaScript in `site-pages/`, no framework. `scripts/prepare-site.mjs` copies the pages, fills the
-release placeholders from `releases/vpn/releases.json` and `releases/find/releases.json`, and writes `/build.json` with the commit it was built from.
+release placeholders from `releases/vpn/releases.json`, `releases/find/releases.json` and
+`releases/file-bridge/releases.json`, and writes `/build.json` with the commit it was built from.
 Preview locally by serving `public/` (for example `python -m http.server -d public 8080`).
 
 ## Publishing a NOBAD VPN release
@@ -23,15 +24,24 @@ npm run build
 Review the diff, commit and push `main`; Cloudflare deploys it. Check `/build.json` shows your commit.
 
 ## Publishing a NOBAD Find release
-NOBAD Find is released from the same repository with a `find-v*` tag (`find-release.yml`). Until its first release,
-`releases/find/releases.json` lists none and the site shows "Coming with the first release". After the GitHub Release
-is published:
+NOBAD Find is released from `nobad-studio/Nobad-VPN` with a `find-v*` tag (`find-release.yml`). If
+`releases/find/releases.json` lists no release, the site shows "Coming with the first release". After the GitHub
+Release is published:
 ```
 python scripts/publish_find_release.py <version> "<one-line summary>"
 npm run build
 ```
 It takes the installer's size and SHA-256 from the CI release (its `.sha256` file, checked against GitHub's own
 digest), never typed by hand. Review the diff and open a pull request.
+
+## Publishing a NOBAD File Bridge release
+NOBAD File Bridge is released from [`nobad-studio/file-bridge`](https://github.com/nobad-studio/file-bridge) with a `v*`
+tag (`release.yml`: a Windows installer and a Linux .deb). After the GitHub Release is published:
+```
+python scripts/publish_file_bridge_release.py <version> "<one-line summary>"
+npm run build
+```
+Review the diff and open a pull request.
 
 ## Rules
 - The site's Content-Security-Policy (`site-pages/_headers`) allows no inline scripts: put JavaScript in

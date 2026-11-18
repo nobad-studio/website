@@ -135,33 +135,90 @@
     </ol>
   </div>
 </section>
+<section class="p-sec alt" id="sync" aria-labelledby="syncTitle">
+  <div class="p-wrap">
+    <p class="p-label">Sync and deploy</p>
+    <div class="p-head"><h2 id="syncTitle">Nothing changes until you've seen it.</h2><p>Sync and deployments show you a preview first, and a failed deployment rolls back on its own.</p></div>
+    <div class="p-intel">
+      <ul class="p-list">
+        <li><b>Two-way sync that remembers.</b> It compares your folder, the server and the last sync, so it knows what was added, changed or deleted on each side.</li>
+        <li><b>You decide every conflict.</b> When a file changed on both sides, you choose per file: keep yours, keep the server's, or keep both.</li>
+        <li><b>A fresh preview, then the run.</b> What you approve is checked again just before it runs, so nothing stale is applied.</li>
+        <li><b>Safe transfers.</b> Files arrive as <code>.part</code> and are only renamed when complete, so a dropped connection never leaves half a file.</li>
+        <li><b>Deployments with a way back.</b> A backup first, then your upload and commands, then a health check. If it fails, it rolls back on its own.</li>
+      </ul>
+      <div class="p-panel" role="img" aria-label="Illustration: a sync preview with two uploads, one download and one conflict waiting for your decision.">
+        <div class="p-scan" aria-hidden="true"></div>
+        <div class="p-panel-top" aria-hidden="true"><i></i><i></i><i></i>nobad file bridge · sync preview<span>nothing applied yet</span></div>
+        <div class="p-panel-body" aria-hidden="true">
+          <div class="ln"><span class="c-dim">&gt; sync</span><span>site/ ⇄ example.com:/var/www</span></div>
+          <div class="ln"><span>index.html</span><span class="c-ac">upload</span></div>
+          <div class="ln"><span>css/site.css</span><span class="c-ac">upload</span></div>
+          <div class="ln"><span>uploads/photo.jpg</span><span class="c-ac">download</span></div>
+          <div class="ln"><span>config.php</span><span class="c-bad">conflict · you decide</span></div>
+          <div class="p-verdict"><b>4 changes ready</b><span class="c-dim">review · keep both · run <span class="p-cursor"></span></span></div>
+        </div>
+        <div class="p-panel-note" aria-hidden="true">Illustration · not a screenshot</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="p-sec p-trust" id="security" aria-labelledby="securityTitle">
   <div class="p-wrap">
     <p class="p-label">Security</p>
     <div class="p-head"><h2 id="securityTitle">It holds your keys. It keeps them.</h2><p>A file manager holds the keys to your servers. These are the protections it's built around.</p></div>
     <div class="p-trust-grid" style="--n:3">
-      <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Encrypted password vault</h3><p>Saved logins are encrypted with your master password. Saved secrets live in your operating system's keyring.</p><p class="p-mono" style="margin-top:12px">Argon2id + AES-GCM</p></article>
+      <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Encrypted password vault</h3><p>Saved server passwords and key passphrases live in your operating system's keyring. Other secrets, like .env values and API keys, go in a vault encrypted with your master password.</p><p class="p-mono" style="margin-top:12px">Argon2id + AES-GCM</p></article>
       <article class="p-trust-item p-hot"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Host keys verified</h3><p>An unknown server is shown to you before you connect. A server whose key has changed is refused by default.</p><p class="p-mono" style="margin-top:12px">On by default</p></article>
       <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>No tracking</h3><p>No accounts, ads or telemetry. Your files and logins go between your PC and the servers you connect to.</p><p class="p-mono" style="margin-top:12px">Open source · MIT</p></article>
     </div>
+    <p class="p-note"><b>Honest note</b><span>NOBAD File Bridge isn't code-signed yet, so Windows SmartScreen warns before it installs: verify the checksum first. Plain FTP sends passwords unencrypted; the app marks it insecure, so use SFTP or FTPS whenever the server offers them.</span></p>
   </div>
 </section>
 
 <section class="p-sec" id="download" aria-labelledby="downloadTitle">
   <div class="p-wrap">
     <p class="p-label">Download</p>
-    <div class="p-head"><h2 id="downloadTitle">Version {{FB_VERSION}}.</h2><p>{{FB_SUMMARY}} Released {{FB_DATE}}, built by GitHub Actions from the public source, with signed build provenance.</p></div>
+    <div class="p-head"><h2 id="downloadTitle">Get NOBAD File Bridge.</h2><p>Only install it from this page or GitHub Releases, and check the SHA-256 before you run it.</p></div>
     <div class="p-status">
-      <div class="p-status-head"><div><h3>Free and open source, MIT License.</h3><p>Check the SHA-256 before you run a download. It isn't code-signed yet, so Windows SmartScreen may warn you: choose <b>More info &rarr; Run anyway</b> only after the checksum matches.</p></div><span class="p-badge">&#9679; Available</span></div>
-      <div class="p-status-row"><div><h4>Windows</h4><p>{{FB_WIN_PLATFORM}} &middot; {{FB_WIN_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_WIN_FILE}}">{{FB_WIN_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_WIN_URL}}" rel="noopener">Download installer</a></div></div>
-      <div class="p-status-row"><div><h4>Linux</h4><p>{{FB_DEB_PLATFORM}} &middot; {{FB_DEB_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_DEB_FILE}}">{{FB_DEB_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_DEB_URL}}" rel="noopener">Download .deb</a></div></div>
-      <div class="p-status-row"><div><h4>Check a download</h4><p>Windows (PowerShell): <code>Get-FileHash {{FB_WIN_FILE}}</code> &middot; Linux: <code>sha256sum {{FB_DEB_FILE}}</code> &middot; Provenance: <code>gh attestation verify &lt;file&gt; -R nobad-studio/file-bridge</code></p></div><div class="p-actions"><a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">Release notes &#8599;</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge" rel="noopener">Source &#8599;</a></div></div>
+      <div class="p-status-head p-hot"><div><h3>BUILD AVAILABLE.</h3><p>{{FB_SUMMARY}}</p></div><span class="p-badge">● STABLE</span></div>
+      <div class="p-status-row"><div><h4>NOBAD File Bridge {{FB_VERSION}}</h4><p>{{FB_DATE}} / Windows 10 &amp; 11 and Linux / x64</p></div><div class="p-actions"><a class="p-btn" href="{{FB_WIN_URL}}">Download for Windows ↗</a><a class="p-btn" href="{{FB_DEB_URL}}">Download .deb ↗</a><a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">Release notes</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge/releases" rel="noopener">All releases ↗</a></div></div>
+      <div class="p-history">{{FB_HISTORY}}</div>
+      <div class="p-integrity">
+        <h4>Download integrity</h4>
+        <p>Windows installer ({{FB_WIN_PLATFORM}}): SHA-256: {{FB_WIN_SHA256}} | File size: {{FB_WIN_SIZE}}.</p>
+        <p>Linux package ({{FB_DEB_PLATFORM}}): SHA-256: {{FB_DEB_SHA256}} | File size: {{FB_DEB_SIZE}}. Verify the digest against the file you downloaded.</p>
+        <h4>How to verify</h4>
+        <p>On Windows, in PowerShell, in the folder you downloaded to:</p><pre><code>Get-FileHash .\{{FB_WIN_FILE}} -Algorithm SHA256</code></pre>
+        <p>On Linux:</p><pre><code>sha256sum {{FB_DEB_FILE}}</code></pre>
+        <p>The result must match the SHA-256 above and the <a href="{{FB_WIN_URL}}.sha256">Windows</a> or <a href="{{FB_DEB_URL}}.sha256">Linux</a> .sha256 file on the release.</p>
+        <p>To check it was built by NOBAD's release workflow from this version's tag (with the <a href="https://cli.github.com/">GitHub CLI</a>):</p><pre><code>gh attestation verify {{FB_WIN_FILE}} -R nobad-studio/file-bridge --signer-workflow nobad-studio/file-bridge/.github/workflows/release.yml --source-ref refs/tags/v{{FB_VERSION}} --deny-self-hosted-runners</code></pre>
+        <h4>"Windows protected your PC"</h4>
+        <p>Because NOBAD File Bridge isn't code-signed yet, SmartScreen may show this for a new download. If the checksum matches, choose <b>More info</b> → <b>Run anyway</b>. A checksum proves the file is the one GitHub built; signing will add proof of who published it.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="p-sec p-ghost alt" id="faq" aria-labelledby="faqTitle">
+<section class="p-sec alt" id="details" aria-labelledby="detailsTitle">
+  <div class="p-wrap">
+    <p class="p-label">Compatibility &amp; disclosure</p>
+    <div class="p-head"><h2 id="detailsTitle">The details.</h2><p>What it needs, what it touches and what it connects to. Anything that isn't verified is left out rather than guessed.</p></div>
+    <dl class="p-specs">
+      <div><dt>Supported systems</dt><dd>Windows 10 and Windows 11 (64-bit), using Edge WebView2, which is part of Windows. Ubuntu 22.04+ and Debian 12+ (64-bit).</dd></div>
+      <div><dt>Install</dt><dd>Windows: a per-user installer with no admin prompt. It isn't code-signed yet, so Windows SmartScreen warns: choose <b>More info</b> → <b>Run anyway</b> once the SHA-256 matches. Linux: <code>sudo apt install ./{{FB_DEB_FILE}}</code>.</dd></div>
+      <div><dt>Connects with</dt><dd>SSH/SFTP, FTP and FTPS (explicit or implicit TLS, with certificate checks). Plain FTP is marked insecure. Hosting panels and cloud storage work only through one of these.</dd></div>
+      <div><dt>Saved logins</dt><dd>Server passwords and keys are kept in your system keyring. Other secrets go in a credential vault locked by your master password (Argon2id, AES-GCM). Secrets are never written to its database or logs in plain text.</dd></div>
+      <div><dt>Your data</dt><dd>Profiles, history and settings stay on your computer. Uninstalling keeps them unless you choose to delete them.</dd></div>
+      <div><dt>Permissions</dt><dd>Runs as your normal account. It only changes files on a server when you ask it to, and shows a preview before sync and deployments.</dd></div>
+      <div><dt>Outbound connections</dt><dd>Only the servers you add. No account, no telemetry.</dd></div>
+      <div><dt>Support</dt><dd>Bugs and questions: <a href="https://github.com/nobad-studio/file-bridge/issues">GitHub Issues</a>. Security problems: report them privately via <a href="https://github.com/nobad-studio/file-bridge/security/advisories/new">private vulnerability reporting</a>. Anything else: <a href="mailto:ludmj99@gmail.com">ludmj99@gmail.com</a>.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="p-sec p-ghost" id="faq" aria-labelledby="faqTitle">
   <div class="p-wrap">
     <p class="p-label">FAQ</p>
     <div class="p-head"><h2 id="faqTitle">Questions, answered.</h2><p>Anything else? Ask on <a class="p-link" href="https://github.com/nobad-studio/file-bridge/discussions" rel="noopener">GitHub Discussions</a>.</p></div>
@@ -169,10 +226,11 @@
       <details><summary>Where do I download it?</summary><div class="a"><p>From the <a href="#download">download section</a> above or the <a href="/#downloads">download desk</a>: an installer for Windows (<code>{{FB_WIN_FILE}}</code>: it installs for your user without an admin prompt, and File Bridge then appears in the Start menu) and a <code>.deb</code> for Ubuntu and Debian (<code>sudo apt install ./{{FB_DEB_FILE}}</code>). Version {{FB_VERSION}}.</p></div></details>
       <details><summary>Which computers will it run on?</summary><div class="a"><p>Linux and Windows.</p></div></details>
       <details><summary>Which servers can it connect to?</summary><div class="a"><p>Any server you can reach over SFTP (SSH) or FTP/FTPS: a website host, a VPS or your own machine.</p></div></details>
-      <details><summary>Where are my passwords kept?</summary><div class="a"><p>On your computer: saved logins are encrypted with your master password, and saved secrets are kept in your operating system's keyring.</p></div></details>
+      <details><summary>Where are my passwords kept?</summary><div class="a"><p>On your computer: saved server passwords and key passphrases are kept in your operating system's keyring, and other secrets (like .env values and API keys) in a vault encrypted with your master password.</p></div></details>
       <details><summary>Will it cost anything?</summary><div class="a"><p>It's open source under the MIT License, like every NOBAD product.</p></div></details>
       <details><summary>How can I help?</summary><div class="a"><p>Read the <a href="https://github.com/nobad-studio/.github/blob/main/CONTRIBUTING.md" rel="noopener">contributing guide</a>, pick an <a href="https://github.com/nobad-studio/file-bridge/issues" rel="noopener">open issue</a>, or share ideas in <a href="https://github.com/nobad-studio/file-bridge/discussions" rel="noopener">Discussions</a>.</p></div></details>
     </div>
+    <p class="p-small">Windows, Ubuntu, Debian, cPanel, hPanel and the other product names mentioned are trademarks of their owners. NOBAD is independent and not affiliated with, endorsed by or sponsored by any of them.</p>
   </div>
   <div class="p-drift-row" aria-hidden="true"><span>NOBAD File Bridge · NOBAD File Bridge · </span><span>NOBAD File Bridge · NOBAD File Bridge · </span></div>
 </section>

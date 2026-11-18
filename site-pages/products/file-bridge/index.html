@@ -135,16 +135,45 @@
     </ol>
   </div>
 </section>
+<section class="p-sec alt" id="sync" aria-labelledby="syncTitle">
+  <div class="p-wrap">
+    <p class="p-label">Sync and deploy</p>
+    <div class="p-head"><h2 id="syncTitle">Nothing changes until you've seen it.</h2><p>Sync and deployments show you a preview first, and a failed deployment rolls back on its own.</p></div>
+    <div class="p-intel">
+      <ul class="p-list">
+        <li><b>Two-way sync that remembers.</b> It compares your folder, the server and the last sync, so it knows what was added, changed or deleted on each side.</li>
+        <li><b>You decide every conflict.</b> When a file changed on both sides, you choose per file: keep yours, keep the server's, or keep both.</li>
+        <li><b>A fresh preview, then the run.</b> What you approve is checked again just before it runs, so nothing stale is applied.</li>
+        <li><b>Safe transfers.</b> Files arrive as <code>.part</code> and are only renamed when complete, so a dropped connection never leaves half a file.</li>
+        <li><b>Deployments with a way back.</b> A backup first, then your upload and commands, then a health check. If it fails, it rolls back on its own.</li>
+      </ul>
+      <div class="p-panel" role="img" aria-label="Illustration: a sync preview with two uploads, one download and one conflict waiting for your decision.">
+        <div class="p-scan" aria-hidden="true"></div>
+        <div class="p-panel-top" aria-hidden="true"><i></i><i></i><i></i>nobad file bridge · sync preview<span>nothing applied yet</span></div>
+        <div class="p-panel-body" aria-hidden="true">
+          <div class="ln"><span class="c-dim">&gt; sync</span><span>site/ ⇄ example.com:/var/www</span></div>
+          <div class="ln"><span>index.html</span><span class="c-ac">upload</span></div>
+          <div class="ln"><span>css/site.css</span><span class="c-ac">upload</span></div>
+          <div class="ln"><span>uploads/photo.jpg</span><span class="c-ac">download</span></div>
+          <div class="ln"><span>config.php</span><span class="c-bad">conflict · you decide</span></div>
+          <div class="p-verdict"><b>4 changes ready</b><span class="c-dim">review · keep both · run <span class="p-cursor"></span></span></div>
+        </div>
+        <div class="p-panel-note" aria-hidden="true">Illustration · not a screenshot</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="p-sec p-trust" id="security" aria-labelledby="securityTitle">
   <div class="p-wrap">
     <p class="p-label">Security</p>
     <div class="p-head"><h2 id="securityTitle">It holds your keys. It keeps them.</h2><p>A file manager holds the keys to your servers. These are the protections it's built around.</p></div>
     <div class="p-trust-grid" style="--n:3">
-      <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Encrypted password vault</h3><p>Saved logins are encrypted with your master password. Saved secrets live in your operating system's keyring.</p><p class="p-mono" style="margin-top:12px">Argon2id + AES-GCM</p></article>
+      <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Encrypted password vault</h3><p>Saved server passwords and key passphrases live in your operating system's keyring. Other secrets, like .env values and API keys, go in a vault encrypted with your master password.</p><p class="p-mono" style="margin-top:12px">Argon2id + AES-GCM</p></article>
       <article class="p-trust-item p-hot"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Host keys verified</h3><p>An unknown server is shown to you before you connect. A server whose key has changed is refused by default.</p><p class="p-mono" style="margin-top:12px">On by default</p></article>
       <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>No tracking</h3><p>No accounts, ads or telemetry. Your files and logins go between your PC and the servers you connect to.</p><p class="p-mono" style="margin-top:12px">Open source · MIT</p></article>
     </div>
+    <p class="p-note"><b>Honest note</b><span>NOBAD File Bridge isn't code-signed yet, so Windows SmartScreen warns before it installs: verify the checksum first. Plain FTP sends passwords unencrypted; the app marks it insecure, so use SFTP or FTPS whenever the server offers them.</span></p>
   </div>
 </section>
 
@@ -197,10 +226,11 @@
       <details><summary>Where do I download it?</summary><div class="a"><p>From the <a href="#download">download section</a> above or the <a href="/#downloads">download desk</a>: an installer for Windows (<code>{{FB_WIN_FILE}}</code>: it installs for your user without an admin prompt, and File Bridge then appears in the Start menu) and a <code>.deb</code> for Ubuntu and Debian (<code>sudo apt install ./{{FB_DEB_FILE}}</code>). Version {{FB_VERSION}}.</p></div></details>
       <details><summary>Which computers will it run on?</summary><div class="a"><p>Linux and Windows.</p></div></details>
       <details><summary>Which servers can it connect to?</summary><div class="a"><p>Any server you can reach over SFTP (SSH) or FTP/FTPS: a website host, a VPS or your own machine.</p></div></details>
-      <details><summary>Where are my passwords kept?</summary><div class="a"><p>On your computer: saved logins are encrypted with your master password, and saved secrets are kept in your operating system's keyring.</p></div></details>
+      <details><summary>Where are my passwords kept?</summary><div class="a"><p>On your computer: saved server passwords and key passphrases are kept in your operating system's keyring, and other secrets (like .env values and API keys) in a vault encrypted with your master password.</p></div></details>
       <details><summary>Will it cost anything?</summary><div class="a"><p>It's open source under the MIT License, like every NOBAD product.</p></div></details>
       <details><summary>How can I help?</summary><div class="a"><p>Read the <a href="https://github.com/nobad-studio/.github/blob/main/CONTRIBUTING.md" rel="noopener">contributing guide</a>, pick an <a href="https://github.com/nobad-studio/file-bridge/issues" rel="noopener">open issue</a>, or share ideas in <a href="https://github.com/nobad-studio/file-bridge/discussions" rel="noopener">Discussions</a>.</p></div></details>
     </div>
+    <p class="p-small">Windows, Ubuntu, Debian, cPanel, hPanel and the other product names mentioned are trademarks of their owners. NOBAD is independent and not affiliated with, endorsed by or sponsored by any of them.</p>
   </div>
   <div class="p-drift-row" aria-hidden="true"><span>NOBAD File Bridge · NOBAD File Bridge · </span><span>NOBAD File Bridge · NOBAD File Bridge · </span></div>
 </section>

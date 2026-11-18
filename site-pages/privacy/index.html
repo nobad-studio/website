@@ -49,14 +49,15 @@
     <a href="#app"><span>01</span>NOBAD VPN</a>
     <a href="#connections"><span>02</span>Connections</a>
     <a href="#find"><span>03</span>NOBAD Find</a>
-    <a href="#website"><span>04</span>This website</a>
-    <a href="#contact"><span>05</span>Contact</a>
+    <a href="#file-bridge"><span>04</span>NOBAD File Bridge</a>
+    <a href="#website"><span>05</span>This website</a>
+    <a href="#contact"><span>06</span>Contact</a>
   </nav>
 
   <div>
     <div class="status" role="note">
       <span class="status-tag">Open source</span>
-      <p>Everything below can be checked in the <a href="https://github.com/nobad-studio/Nobad-VPN">source code</a>.
+      <p>Everything below can be checked in the <a href="https://github.com/nobad-studio">source code</a>.
       NOBAD is an independent, free and open-source studio.</p>
     </div>
 
@@ -104,8 +105,20 @@
       </ul>
     </section>
 
+    <section id="file-bridge">
+      <h2><small>04</small>NOBAD File Bridge (the Windows and Linux app)</h2>
+      <ul>
+        <li><b>No account and no telemetry.</b> It connects only to the servers you add to it (SSH/SFTP, FTP/FTPS).</li>
+        <li><b>Saved logins stay on your computer.</b> Connection passwords are kept in your system's keyring only if
+        you choose to remember them; other secrets go into a vault encrypted with your master password (Argon2id and
+        AES-GCM). Nothing is written to disk in plain text.</li>
+        <li>Its source and its own security policy are in
+        <a href="https://github.com/nobad-studio/file-bridge">nobad-studio/file-bridge</a>.</li>
+      </ul>
+    </section>
+
     <section id="website">
-      <h2><small>04</small>This website</h2>
+      <h2><small>05</small>This website</h2>
       <ul>
         <li>It is hosted by <b>Cloudflare</b>, which processes the technical data any website request involves (such as
         your IP address) to deliver and protect the site. See Cloudflare's privacy policy.</li>
@@ -116,7 +129,7 @@
     </section>
 
     <section id="contact">
-      <h2><small>05</small>Contact</h2>
+      <h2><small>06</small>Contact</h2>
       <p>Questions or concerns: open an issue on <a href="https://github.com/nobad-studio/Nobad-VPN/issues">GitHub</a>, or
       report something sensitive privately via
       <a href="https://github.com/nobad-studio/Nobad-VPN/security/advisories/new">private vulnerability reporting</a>. You can
@@ -131,7 +144,7 @@
         <a class="footer-brand" href="/">NOBAD.</a>
         <p class="footer-note">Software with a point of view.<br>An independent software studio.</p>
       </div>
-      <div class="footer-links"><a href="/#products">Products</a><a href="/products/vpn/">NOBAD VPN</a><a href="/products/find/">NOBAD Find</a><a href="/products/file-bridge/">NOBAD File Bridge</a><a href="/#services">What we do</a><a href="/#downloads">Downloads</a><a href="/#about">About</a><a href="/support/">Support</a><a href="mailto:ludmj99@gmail.com">Contact</a><a href="https://github.com/nobad-studio/Nobad-VPN">GitHub</a><a href="/code-signing-policy/">Code signing policy</a><a href="/privacy/" aria-current="page">Privacy</a></div>
+      <div class="footer-links"><a href="/#products">Products</a><a href="/products/vpn/">NOBAD VPN</a><a href="/products/find/">NOBAD Find</a><a href="/products/file-bridge/">NOBAD File Bridge</a><a href="/#services">What we do</a><a href="/#downloads">Downloads</a><a href="/#about">About</a><a href="/support/">Support</a><a href="mailto:ludmj99@gmail.com">Contact</a><a href="https://github.com/nobad-studio">GitHub</a><a href="/code-signing-policy/">Code signing policy</a><a href="/privacy/" aria-current="page">Privacy</a></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year" data-year>2026</span> NOBAD. All rights reserved.</span><span>MIT-licensed open source · <a href="/#collaborate">Built in the open</a></span><span class="tm-note">WireGuard is a registered trademark of Jason A. Donenfeld. Other names are trademarks of their owners; NOBAD is not affiliated with them.</span><span class="ai-mark" title="Developed in collaboration with AI"><i aria-hidden="true">✦</i>Built with AI</span></div>
   </footer>

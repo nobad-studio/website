@@ -101,7 +101,7 @@ function findValues(manifest) {
         `<div class="download-meta">Not published yet<br>Not code-signed yet</div>` +
         `<a class="download-action" href="/products/find/#download">See status <span>↗</span></a>`,
       FIND_RELEASE_HTML:
-        `<div class="p-status-head p-hot"><div><h3>Coming with the first release.</h3><p>The first NOBAD Find installer isn't published yet. When it is, it appears here with its size, its SHA-256 and how to check it.</p></div><span class="p-badge">● Coming soon</span></div>` +
+        `<div class="p-status-head p-hot"><div><h3>COMING WITH THE FIRST RELEASE.</h3><p>The first NOBAD Find installer isn't published yet. When it is, it appears here with its size, its SHA-256 and how to check it.</p></div><span class="p-badge">● Coming soon</span></div>` +
         `<div class="p-status-row"><div><h4>NOBAD Find</h4><p>${FIND_PLATFORM} · no download yet</p></div><div class="p-actions"><a class="p-btn" href="${all}" rel="noopener">GitHub Releases ↗</a></div></div>`,
     };
   }
@@ -132,7 +132,7 @@ function findValues(manifest) {
       `<div class="download-meta">Released ${esc(cur.releaseDate)}<br>Not code-signed yet</div>` +
       `<a class="download-action" href="/products/find/#download">Get it <span>↗</span></a>`,
     FIND_RELEASE_HTML:
-      `<div class="p-status-head p-hot"><div><h3>Build available.</h3><p>${esc(cur.summary || "A published release is available. Review its notes and integrity details before installing.")}</p></div><span class="p-badge">● ${esc(String(cur.channel || "stable").toUpperCase())}</span></div>` +
+      `<div class="p-status-head p-hot"><div><h3>BUILD AVAILABLE.</h3><p>${esc(cur.summary || "A published release is available. Review its notes and integrity details before installing.")}</p></div><span class="p-badge">● ${esc(String(cur.channel || "stable").toUpperCase())}</span></div>` +
       `<div class="p-status-row"><div><h4>NOBAD Find ${v}</h4><p>${meta}</p></div><div class="p-actions"><a class="p-btn" href="${url}">Download installer ↗</a><a class="p-btn ghost" href="${esc(cur.notesUrl)}" rel="noopener">Release notes</a><a class="p-btn ghost" href="${all}" rel="noopener">All releases ↗</a></div></div>` +
       `<div class="p-history">${history}</div>` +
       `<div class="p-integrity"><h4>Download integrity</h4><p>SHA-256: ${esc(cur.sha256)} | File size: ${esc(cur.size)}. Verify this digest against the downloaded file.</p>` +

@@ -151,12 +151,23 @@
 <section class="p-sec" id="download" aria-labelledby="downloadTitle">
   <div class="p-wrap">
     <p class="p-label">Download</p>
-    <div class="p-head"><h2 id="downloadTitle">Version {{FB_VERSION}}.</h2><p>{{FB_SUMMARY}} Released {{FB_DATE}}, built by GitHub Actions from the public source, with signed build provenance.</p></div>
+    <div class="p-head"><h2 id="downloadTitle">Get NOBAD File Bridge.</h2><p>Only install it from this page or GitHub Releases, and check the SHA-256 before you run it.</p></div>
     <div class="p-status">
-      <div class="p-status-head"><div><h3>Free and open source, MIT License.</h3><p>Check the SHA-256 before you run a download. It isn't code-signed yet, so Windows SmartScreen may warn you: choose <b>More info &rarr; Run anyway</b> only after the checksum matches.</p></div><span class="p-badge">&#9679; Available</span></div>
-      <div class="p-status-row"><div><h4>Windows</h4><p>{{FB_WIN_PLATFORM}} &middot; {{FB_WIN_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_WIN_FILE}}">{{FB_WIN_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_WIN_URL}}" rel="noopener">Download installer</a></div></div>
-      <div class="p-status-row"><div><h4>Linux</h4><p>{{FB_DEB_PLATFORM}} &middot; {{FB_DEB_SIZE}}</p><p class="p-hash"><code title="SHA-256 of {{FB_DEB_FILE}}">{{FB_DEB_SHA256}}</code></p></div><div class="p-actions"><a class="p-btn" href="{{FB_DEB_URL}}" rel="noopener">Download .deb</a></div></div>
-      <div class="p-status-row"><div><h4>Check a download</h4><p>Windows (PowerShell): <code>Get-FileHash {{FB_WIN_FILE}}</code> &middot; Linux: <code>sha256sum {{FB_DEB_FILE}}</code> &middot; Provenance: <code>gh attestation verify &lt;file&gt; -R nobad-studio/file-bridge</code></p></div><div class="p-actions"><a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">Release notes &#8599;</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge" rel="noopener">Source &#8599;</a></div></div>
+      <div class="p-status-head p-hot"><div><h3>BUILD AVAILABLE.</h3><p>{{FB_SUMMARY}}</p></div><span class="p-badge">● STABLE</span></div>
+      <div class="p-status-row"><div><h4>NOBAD File Bridge {{FB_VERSION}}</h4><p>{{FB_DATE}} / Windows 10 &amp; 11 and Linux / x64</p></div><div class="p-actions"><a class="p-btn" href="{{FB_WIN_URL}}">Download for Windows ↗</a><a class="p-btn" href="{{FB_DEB_URL}}">Download .deb ↗</a><a class="p-btn ghost" href="{{FB_NOTES}}" rel="noopener">Release notes</a><a class="p-btn ghost" href="https://github.com/nobad-studio/file-bridge/releases" rel="noopener">All releases ↗</a></div></div>
+      <div class="p-history">{{FB_HISTORY}}</div>
+      <div class="p-integrity">
+        <h4>Download integrity</h4>
+        <p>Windows installer ({{FB_WIN_PLATFORM}}): SHA-256: {{FB_WIN_SHA256}} | File size: {{FB_WIN_SIZE}}.</p>
+        <p>Linux package ({{FB_DEB_PLATFORM}}): SHA-256: {{FB_DEB_SHA256}} | File size: {{FB_DEB_SIZE}}. Verify the digest against the file you downloaded.</p>
+        <h4>How to verify</h4>
+        <p>On Windows, in PowerShell, in the folder you downloaded to:</p><pre><code>Get-FileHash .\{{FB_WIN_FILE}} -Algorithm SHA256</code></pre>
+        <p>On Linux:</p><pre><code>sha256sum {{FB_DEB_FILE}}</code></pre>
+        <p>The result must match the SHA-256 above and the <a href="{{FB_WIN_URL}}.sha256">Windows</a> or <a href="{{FB_DEB_URL}}.sha256">Linux</a> .sha256 file on the release.</p>
+        <p>To check it was built by NOBAD's release workflow from this version's tag (with the <a href="https://cli.github.com/">GitHub CLI</a>):</p><pre><code>gh attestation verify {{FB_WIN_FILE}} -R nobad-studio/file-bridge --signer-workflow nobad-studio/file-bridge/.github/workflows/release.yml --source-ref refs/tags/v{{FB_VERSION}} --deny-self-hosted-runners</code></pre>
+        <h4>"Windows protected your PC"</h4>
+        <p>Because NOBAD File Bridge isn't code-signed yet, SmartScreen may show this for a new download. If the checksum matches, choose <b>More info</b> → <b>Run anyway</b>. A checksum proves the file is the one GitHub built; signing will add proof of who published it.</p>
+      </div>
     </div>
   </div>
 </section>

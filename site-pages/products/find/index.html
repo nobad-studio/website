@@ -132,6 +132,10 @@
       <article class="p-feat"><span class="k">Ready</span><h3>Stays ready</h3><p>Closing the window keeps NOBAD Find in the notification area so the shortcut always works. One switch makes closing quit it completely.</p></article>
       <article class="p-feat"><span class="k">Yours</span><h3>Your folders first</h3><p>Downloads, Desktop, Documents, Pictures, Videos, Music and OneDrive are read and understood before the rest of the PC.</p></article>
       <article class="p-feat"><span class="k">Keys</span><h3>Shortcuts you set</h3><p>Press the keys you want or type them. NOBAD Find checks they are free first, and the change works at once. Or clear it.</p></article>
+      <article class="p-feat p-hot"><span class="k">Bar</span><h3>Search bar, like Spotlight</h3><p>With the window closed, Win+Shift+F opens a small search bar over any app: files, Windows settings and apps. With the window open, it goes to its search box.</p></article>
+      <article class="p-feat"><span class="k">Boost</span><h3>Boost, with a safety net</h3><p>Boost uses every processor thread, even while you use the PC. The safety net steps it down when other apps need room and pauses it before the PC struggles.</p></article>
+      <article class="p-feat"><span class="k">New</span><h3>New files first</h3><p>A file you just downloaded or saved is read, looked at and understood before everything else, within moments in your own folders.</p></article>
+      <article class="p-feat"><span class="k">Live</span><h3>Settings apply at once</h3><p>Workers, Boost, the safety net and Keep models loaded take effect the moment you change them. No restart.</p></article>
       <article class="p-feat"><span class="k">Update</span><h3>Updates itself</h3><p>It looks for a new version once a day and installs it when you press Install, after checking its size and SHA-256. Or check by hand, or turn it off.</p></article>
       <article class="p-feat"><span class="k">Window</span><h3>A native window</h3><p>Drawn natively instead of a web page: about 130-170 MB in one process, where the old window used about 465 MB in seven (on the reference PC).</p></article>
       <article class="p-feat"><span class="k">Guess</span><h3>Best guess and suggestions</h3><p>When it's sure, the best match comes first and Enter opens it. Suggestions come from your own past searches and file names, kept only on this PC.</p></article>
@@ -145,16 +149,17 @@
 <section class="p-sec" id="all-features" aria-labelledby="allFeaturesTitle">
   <div class="p-wrap">
     <p class="p-label">Full feature list</p>
-    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 57 features of NOBAD Find 0.9.2, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
+    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 63 features of NOBAD Find 0.9.3, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
     <div class="p-cats">
       <section class="p-cat" aria-labelledby="fl1">
-        <header><span class="p-cat-n">01</span><h3 id="fl1">Search</h3><span class="p-cat-c">6 features</span></header>
+        <header><span class="p-cat-n">01</span><h3 id="fl1">Search</h3><span class="p-cat-c">7 features</span></header>
         <ul>
           <li><b>File and folder names</b><span>Any part of a name, across your profile and every fixed drive, as you type.</span></li>
           <li><b>The words inside files</b><span>Word, ODF and RTF documents, spreadsheets, slides, PDFs, EPUB, code, notes and e-mail files (.eml, .mbox). Word forms match: “landlords” finds “landlord”.</span></li>
           <li><b>Search by meaning</b><span>Optional. “rent” finds “lease agreement”, and “power bill” finds electricity-bill-march.pdf.</span></li>
           <li><b>Photos by what they show</b><span>Optional. “dog on a beach” finds IMG_0042.jpg, even with no words in it.</span></li>
           <li><b>Words in pictures</b><span>Screenshots, photos of documents and scanned PDFs are read with Windows’ built-in OCR, offline.</span></li>
+          <li><b>Every Windows setting</b><span>About 1,400 settings from Windows’ own catalog in your language (“battery percentage”, “edit environment variables”), opened from the results.</span></li>
           <li><b>Why it matched</b><span>Every result says why it was found: its name, its text, its meaning or a filter.</span></li>
         </ul>
       </section>
@@ -181,10 +186,11 @@
         </ul>
       </section>
       <section class="p-cat" aria-labelledby="fl4">
-        <header><span class="p-cat-n">04</span><h3 id="fl4">Window and keyboard</h3><span class="p-cat-c">8 features</span></header>
+        <header><span class="p-cat-n">04</span><h3 id="fl4">Window and keyboard</h3><span class="p-cat-c">9 features</span></header>
         <ul>
           <li><b>A native window</b><span>About 130-170 MB in one process; the old web window used about 465 MB in seven (reference PC).</span></li>
           <li><b>Win+Shift+F</b><span>Opens NOBAD Find from anywhere. If a combination is taken on your PC, it picks the next free one and says so.</span></li>
+          <li><b>Search bar</b><span>Like Spotlight: with the window closed, the shortcut opens a small search bar over any app, with files, Windows settings and apps; with the window open, its search box. It can be turned off.</span></li>
           <li><b>Shortcuts you set</b><span>Press the keys you want or type them; NOBAD Find checks first that they’re free. Takes effect at once, or clear it.</span></li>
           <li><b>Windows settings and apps</b><span>About 1,400 settings from Windows’ own catalog, in your Windows language, Control Panel items and your apps, with their version and install folder.</span></li>
           <li><b>Keyboard first</b><span>↑ ↓ to move, Enter to open, Ctrl+Enter to show in folder, Ctrl+C to copy the path, Shift+Delete to forget a result.</span></li>
@@ -194,9 +200,13 @@
         </ul>
       </section>
       <section class="p-cat" aria-labelledby="fl5">
-        <header><span class="p-cat-n">05</span><h3 id="fl5">Indexing and performance</h3><span class="p-cat-c">10 features</span></header>
+        <header><span class="p-cat-n">05</span><h3 id="fl5">Indexing and performance</h3><span class="p-cat-c">14 features</span></header>
         <ul>
           <li><b>Always current</b><span>Folder-change notifications put new, changed and deleted files in the index within seconds.</span></li>
+          <li><b>New files first</b><span>A new download, a saved photo or a changed file goes before everything else; in your own folders it is read within moments.</span></li>
+          <li><b>Boost</b><span>Optional. Every processor thread for reading, photos and meaning, even while you use the PC.</span></li>
+          <li><b>Safety net</b><span>On by default. Even at Boost it works gently when other apps need the processor, uses one worker when memory gets tight, and pauses before the PC struggles.</span></li>
+          <li><b>Settings apply at once</b><span>Workers, Boost, the safety net and every switch take effect the moment you change them.</span></li>
           <li><b>Your folders first</b><span>Downloads, Desktop, Documents, Pictures, Videos, Music and OneDrive are read, looked at and understood before the rest of the PC.</span></li>
           <li><b>Photos while it works</b><span>Names, text, scans, meaning and photos take turns, and a photo search in a folder looks at that folder’s photos first.</span></li>
           <li><b>Steps aside, and says why</b><span>Every two seconds it checks how free the PC is and works at full speed, gently, lightly or not at all, with a one-line reason.</span></li>
@@ -205,7 +215,7 @@
           <li><b>Contained workers</b><span>Low CPU, memory and disk priority, efficiency mode when the PC is busy, a hard memory limit and a watchdog. Quitting ends every worker.</span></li>
           <li><b>Fast on a big index</b><span>Under 25 ms a keystroke on a million-file index (reference PC); an older search stops as soon as you type the next letter.</span></li>
           <li><b>Light on memory</b><span>About 35 MB for the main process when idle, and about 17 MB in use while the window is closed.</span></li>
-          <li><b>Indexing page</b><span>Each phase with progress and time left, NOBAD Find’s own CPU, memory, disk and graphics use, every model and every decision.</span></li>
+          <li><b>Indexing page</b><span>Each step as a card with its progress and time left, NOBAD Find’s own CPU, memory, disk and graphics use, every model and every decision.</span></li>
         </ul>
       </section>
       <section class="p-cat" aria-labelledby="fl6">
@@ -216,7 +226,7 @@
           <li><b>Photo models</b><span>SigLIP base (211 MB) and SigLIP 2 base (393 MB), Apache-2.0.</span></li>
           <li><b>Your OK first</b><span>Nothing downloads until you say Download. Each model shows what it improves, its licence, size and memory.</span></li>
           <li><b>Switch without waiting</b><span>Changing the meaning model rebuilds in the background; search keeps working with the old one until the new one is ready.</span></li>
-          <li><b>Out of memory when idle</b><span>Models load when you use them and leave memory after a few idle minutes, unless you choose Keep models loaded.</span></li>
+          <li><b>Out of memory when idle</b><span>Models load when you use them and leave memory after a few idle minutes. Keep models loaded keeps them in memory; when memory runs high, the workers restart first.</span></li>
           <li><b>A card for every model</b><span>What it’s for, download size, memory, licence, languages and measured quality, where it comes from and the folder it’s saved in.</span></li>
           <li><b>Asks when a search needs one</b><span>A photo search without the photo model says so, with one button to download it or switch it on.</span></li>
         </ul>
@@ -260,7 +270,7 @@
         <li><b>"pdf in D:\Work bigger than 1 mb".</b> A typed path and a size, understood as filters.</li>
         <li><b>"newest".</b> The files that changed most recently, newest first.</li>
         <li><b>"python files in downloads".</b> Code in that language, in that folder.</li>
-        <li><b>"open bluetooth".</b> The Windows Settings page, with Open; Enter opens it.</li>
+        <li><b>"open bluetooth".</b> The Windows Settings page, with Open; Enter opens it, in the window or the search bar.</li>
       </ul>
       <div class="p-panel" role="img" aria-label="Illustration: the question 'pdf in D:\Work bigger than 1 mb' read as kind PDF, folder D:\Work and size over 1 MB, newest first.">
         <div class="p-scan" aria-hidden="true"></div>

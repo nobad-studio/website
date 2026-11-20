@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.9.2",
+  "latest": "0.9.3",
   "releases": [
+    {
+      "version": "0.9.3",
+      "releaseDate": "2026-11-20",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Search bar like Spotlight, Boost with a safety net, new files first, settings that apply at once, a new Index page",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v0.9.3/NobadFind-Setup-0.9.3.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v0.9.3",
+      "sha256": "b710a4b9adbac68b4266ca233b0514044e5095499a3023edb180f61ae04ed260",
+      "size": "39.4 MB"
+    },
     {
       "version": "0.9.2",
       "releaseDate": "2026-11-20",

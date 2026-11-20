@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.8.5",
+  "latest": "0.9.0",
   "releases": [
+    {
+      "version": "0.9.0",
+      "releaseDate": "2026-11-20",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Shortcuts that work and close to the notification area, photo search that finds what is in the photos, model cards, in-app updates",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v0.9.0/NobadFind-Setup-0.9.0.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v0.9.0",
+      "sha256": "e2b682d0cb22d1f277a9bd5be3fca38b66bb6499cd9c5c30696463850bcde078",
+      "size": "39.3 MB"
+    },
     {
       "version": "0.8.5",
       "releaseDate": "2026-11-20",

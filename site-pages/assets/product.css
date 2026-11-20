@@ -221,6 +221,22 @@ body.pg { margin: 0; min-height: 100vh; display: flex; flex-direction: column; b
 .p-specs dd { margin: 0; color: var(--mut); font-size: 15px; line-height: 1.65; }
 .p-specs a { color: var(--ac); text-decoration: underline; text-underline-offset: 3px; }
 
+/* full feature list */
+.p-cats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); border-radius: var(--r); background: var(--line); overflow: hidden; }
+.p-cat { padding: 28px clamp(20px, 2.4vw, 34px) 18px; background: var(--bg); }
+.p-sec.alt .p-cat { background: var(--bg-2); }
+.p-cat header { display: flex; align-items: baseline; gap: 14px; padding-bottom: 16px; border-bottom: 1px solid var(--line-2); }
+.p-cat-n { color: var(--ac); font: 700 11px var(--mono); letter-spacing: .12em; }
+.p-cat h3 { flex: 1; margin: 0; font: 700 20px/1.2 var(--body); letter-spacing: -.02em; }
+.p-cat-c { color: var(--dim); font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.p-cat ul { list-style: none; margin: 0; padding: 0; }
+.p-cat li { display: grid; grid-template-columns: minmax(150px, 34%) minmax(0, 1fr); gap: 4px 20px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.p-cat li:last-child { border-bottom: 0; }
+.p-cat li b { color: var(--tx); font-size: 14.5px; font-weight: 650; line-height: 1.5; }
+.p-cat li span { color: var(--mut); font-size: 14px; line-height: 1.6; }
+@media (max-width: 1060px) { .p-cats { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .p-cat li { grid-template-columns: 1fr; } }
+
 /* ---------- motion ---------- */
 /* One easing family for everything: fast out, soft landing. Transform and opacity only. */
 .pg { --ease: cubic-bezier(.22, .8, .24, 1); }

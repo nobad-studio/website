@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.7.0",
+  "latest": "0.8.5",
   "releases": [
+    {
+      "version": "0.8.5",
+      "releaseDate": "2026-11-20",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Native window instead of WebView2 (about 130-170 MB instead of 465 MB), smart search in plain words, model choice, Hindi",
+      "downloadUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/download/find-v0.8.5/NobadFind-Setup-0.8.5.exe",
+      "notesUrl": "https://github.com/nobad-studio/Nobad-VPN/releases/tag/find-v0.8.5",
+      "sha256": "178e6c258a25df01ff285d19b83d25f1afa8c345aa09b3961147767520e43492",
+      "size": "39.3 MB"
+    },
     {
       "version": "0.7.0",
       "releaseDate": "2026-11-18",

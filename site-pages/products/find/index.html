@@ -116,10 +116,10 @@
     <div class="p-grid">
       <article class="p-feat p-hot"><span class="k">Name</span><h3>By name</h3><p>Type part of a file's name and it's there, across the folders you index.</p></article>
       <article class="p-feat"><span class="k">Content</span><h3>The words inside</h3><p>Documents, PDFs, Office and ODF files, EPUB, code, notes and e-mail files (.eml, .mbox).</p></article>
-      <article class="p-feat"><span class="k">Meaning</span><h3>By meaning</h3><p>Find a file by what it's about, not only its exact words. An optional local model, a 23 MB one-time download.</p></article>
-      <article class="p-feat"><span class="k">Photos</span><h3>What's in a photo</h3><p>Search your photos by what they show. An optional local image model, about 211 MB, downloaded once.</p></article>
+      <article class="p-feat"><span class="k">Meaning</span><h3>By meaning</h3><p>Find a file by what it's about, not only its exact words. Optional local models from 23 MB; Settings → Models recommends one for your PC.</p></article>
+      <article class="p-feat"><span class="k">Photos</span><h3>What's in a photo</h3><p>Search your photos by what they show. An optional local image model (211 or 393 MB), downloaded once.</p></article>
       <article class="p-feat"><span class="k">OCR</span><h3>Words in pictures</h3><p>Text in photos, screenshots and scanned PDFs is read with Windows' built-in OCR, offline.</p></article>
-      <article class="p-feat"><span class="k">Ask</span><h3>Plain questions</h3><p>"list all pdf here", "pdf in D:\Work bigger than 1 mb", "newest": kinds, dates, sizes, folders and order, in words.</p></article>
+      <article class="p-feat"><span class="k">Ask</span><h3>Plain questions</h3><p>"2 boys in an image in downloads", "list all pdf here", "pdf in D:\Work bigger than 1 mb", "newest": kinds, dates, sizes, folders and order, in words.</p></article>
       <article class="p-feat"><span class="k">Filter</span><h3>Filter bar</h3><p>Narrow the results by kind, date, size and folder, and choose the order.</p></article>
       <article class="p-feat"><span class="k">Here</span><h3>Win+Shift+Space</h3><p>Open NOBAD Find from anywhere. Pressed in File Explorer, "here" means the folder you're in.</p></article>
       <article class="p-feat"><span class="k">Preview</span><h3>Previews in results</h3><p>Thumbnails in the results, so you can tell at a glance which file is the one.</p></article>
@@ -128,7 +128,12 @@
       <article class="p-feat"><span class="k">Smart</span><h3>Steps aside, smartly</h3><p>It checks every two seconds how much of your PC is free. A game alone doesn't stop it: it pauses only when the PC is really busy, and it remembers which apps need room.</p></article>
       <article class="p-feat"><span class="k">Open</span><h3>Shows you everything</h3><p>The Indexing page shows each step with time left, how much CPU, memory, disk and graphics NOBAD Find itself uses, its models, and why it works at the speed it does.</p></article>
       <article class="p-feat"><span class="k">Bar</span><h3>Quick find bar</h3><p>Ctrl+Alt+Space opens a small search bar over any app. Enter opens the file, Alt+Enter moves the search to the full window.</p></article>
-      <article class="p-feat"><span class="k">Exit</span><h3>Closes cleanly</h3><p>Closing the window stops indexing and every helper process. Files you opened from it stay open. Models leave memory when they aren't used.</p></article>
+      <article class="p-feat"><span class="k">Exit</span><h3>Closes cleanly</h3><p>Closing the window quits NOBAD Find completely, unless you ask it to keep running for the hotkey. Files you opened from it stay open.</p></article>
+      <article class="p-feat"><span class="k">Window</span><h3>A native window</h3><p>Drawn natively instead of a web page: about 130-170 MB in one process, where the old window used about 465 MB in seven (on the reference PC).</p></article>
+      <article class="p-feat"><span class="k">Guess</span><h3>Best guess and suggestions</h3><p>When it's sure, the best match comes first and Enter opens it. Suggestions come from your own past searches and file names, kept only on this PC.</p></article>
+      <article class="p-feat"><span class="k">Hindi</span><h3>Hindi and Hinglish</h3><p>Ask in Hindi or mixed Hindi and English, and find Hindi files by meaning with an optional multilingual model.</p></article>
+      <article class="p-feat"><span class="k">Models</span><h3>Models picked for your PC</h3><p>Settings → Models looks at your memory, cores, graphics and languages and recommends Light, Balanced or Best, with each model's size, memory and licence.</p></article>
+      <article class="p-feat"><span class="k">Fast</span><h3>Fast on a big index</h3><p>On a million-file index, short searches take under 25 ms a keystroke on the reference PC, and an older search stops as soon as you type the next letter.</p></article>
     </div>
   </div>
 </section>
@@ -184,7 +189,7 @@
       <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Your account, never admin</h3><p>It runs as your normal account. It never indexes other people's profiles, Windows itself or AppData.</p><p class="p-mono" style="margin-top:12px">No admin rights</p></article>
       <article class="p-trust-item"><span class="p-check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8.5 3 3 7-7"/></svg></span><h3>Secrets stay out</h3><p>Secret material is never indexed: .ssh folders, key files and password-manager folders.</p><p class="p-mono" style="margin-top:12px">Skipped by design</p></article>
     </div>
-    <p class="p-note"><b>Honest note</b><span>NOBAD Find's only internet connections are the two optional model downloads from Hugging Face, pinned and checked by SHA-256, each off until you allow it. The installer isn't code-signed yet, so Windows SmartScreen warns before it runs.</span></p>
+    <p class="p-note"><b>Honest note</b><span>NOBAD Find's only internet connections are the optional model downloads from Hugging Face, pinned and checked by SHA-256, each off until you allow it. The installer isn't code-signed yet, so Windows SmartScreen warns before it runs.</span></p>
   </div>
 </section>
 
@@ -203,14 +208,14 @@
     <p class="p-label">Compatibility &amp; disclosure</p>
     <div class="p-head"><h2 id="detailsTitle">The details.</h2><p>What it needs, what it touches and what it connects to. Anything that isn't verified is left out rather than guessed.</p></div>
     <dl class="p-specs">
-      <div><dt>Supported systems</dt><dd>Windows 10 and Windows 11. The see-through window is on Windows 11.</dd></div>
+      <div><dt>Supported systems</dt><dd>Windows 10 and Windows 11.</dd></div>
       <div><dt>Install</dt><dd>A per-user installer for your own account, with no admin prompt. It isn't code-signed yet, so Windows SmartScreen warns: choose <b>More info</b> → <b>Run anyway</b> once the SHA-256 matches.</dd></div>
       <div><dt>What it searches</dt><dd>File names; the words inside documents, PDFs, Office and ODF files, EPUB, code, notes and e-mail files (.eml, .mbox); words in photos, screenshots and scanned PDFs through Windows' built-in OCR, offline. Optionally USB and external drives and network drives.</dd></div>
-      <div><dt>Optional models</dt><dd>Search by meaning uses a local model, a 23 MB one-time download. Photos by what's in them use a local image model, about 211 MB, downloaded once. Both are off until you allow them. They load when you use them and leave memory after a few idle minutes.</dd></div>
+      <div><dt>Optional models</dt><dd>Search by meaning uses a local model you choose in Settings → Models (23 to 282 MB, downloaded once). Photos by what's in them use a local image model (211 or 393 MB). Nothing downloads until you allow it. Models load when you use them and leave memory after a few idle minutes.</dd></div>
       <div><dt>Index &amp; encryption</dt><dd>The index stays on this PC, encrypted with SQLCipher. Its key is protected by Windows (DPAPI) for your account.</dd></div>
       <div><dt>Never indexed</dt><dd>Other people's profiles, Windows itself, AppData, and secret material such as .ssh folders, key files and password-manager folders.</dd></div>
       <div><dt>Permissions</dt><dd>Runs as your normal account, never as admin. Using it instead of Windows Search takes one click; Windows asks you once, and one click back restores Windows Search.</dd></div>
-      <div><dt>Outbound connections</dt><dd>Only the two optional model downloads from Hugging Face, each pinned and checked by SHA-256, and each off until you allow it. No account, no telemetry.</dd></div>
+      <div><dt>Outbound connections</dt><dd>Only the optional model downloads from Hugging Face, each pinned and checked by SHA-256, and each off until you allow it. No account, no telemetry.</dd></div>
       <div><dt>Support</dt><dd>Bugs and questions: <a href="https://github.com/nobad-studio/Nobad-VPN/issues">GitHub Issues</a>. Security problems: report them privately via <a href="https://github.com/nobad-studio/Nobad-VPN/security/advisories/new">private vulnerability reporting</a>. Anything else: <a href="mailto:ludmj99@gmail.com">ludmj99@gmail.com</a>.</dd></div>
     </dl>
   </div>
@@ -221,8 +226,8 @@
     <p class="p-label">FAQ</p>
     <div class="p-head"><h2 id="faqTitle">Questions, answered.</h2><p>Still stuck? <a class="p-link" href="/support/">Support</a> has the rest.</p></div>
     <div class="p-faq">
-      <details><summary>Does anything leave my PC?</summary><div class="a"><p>No. There's no account and no telemetry. The only internet connections are the two optional model downloads from Hugging Face, pinned and checked by SHA-256, and each one is off until you allow it.</p></div></details>
-      <details><summary>Do I need the models?</summary><div class="a"><p>No. Names, the words inside and OCR work without them. Search by meaning needs a 23 MB one-time download; photos by what's in them need about 211 MB, also once.</p></div></details>
+      <details><summary>Does anything leave my PC?</summary><div class="a"><p>No. There's no account and no telemetry. The only internet connections are the optional model downloads from Hugging Face, pinned and checked by SHA-256, and each one is off until you allow it.</p></div></details>
+      <details><summary>Do I need the models?</summary><div class="a"><p>No. Names, the words inside and OCR work without them. Search by meaning needs a one-time model download (from 23 MB); photos by what's in them need 211 or 393 MB, also once.</p></div></details>
       <details><summary>Why doesn't it need administrator rights?</summary><div class="a"><p>It only searches your own files, so it installs for your account and runs as your normal account, never as admin.</p></div></details>
       <details><summary>Can other people on this PC see my index?</summary><div class="a"><p>The index is encrypted with a key Windows protects for your account (DPAPI). NOBAD Find never indexes other people's profiles.</p></div></details>
       <details><summary>Can it replace Windows Search?</summary><div class="a"><p>Yes, with one click. Windows asks you once, and one click back restores Windows Search.</p></div></details>

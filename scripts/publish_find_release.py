@@ -20,7 +20,10 @@ import re
 import urllib.request
 from pathlib import Path
 
-REPO = "nobad-studio/Nobad-VPN"
+# NOBAD Find has its own repository since 2026-11-20. Releases up to 0.8.5 were published from
+# nobad-studio/Nobad-VPN: pass --repo nobad-studio/Nobad-VPN to (re)publish one of those.
+REPOS = ("nobad-studio/find", "nobad-studio/Nobad-VPN")
+REPO = REPOS[0]
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "releases" / "find" / "releases.json"
 SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
@@ -77,7 +80,10 @@ def main() -> None:
     ap.add_argument("summary", nargs="?", default="", help="one line for the download block")
     ap.add_argument("--channel", default="stable")
     ap.add_argument("--latest", help="only change which listed version is current (rollback)")
+    ap.add_argument("--repo", choices=REPOS, default=REPOS[0], help="where the find-v* release is (default: %(default)s)")
     args = ap.parse_args()
+    global REPO
+    REPO = args.repo
 
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     listed = [r["version"] for r in data["releases"]]

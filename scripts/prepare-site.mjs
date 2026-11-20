@@ -82,7 +82,9 @@ function fileBridgeValues(manifest) {
 
 // NOBAD Find: releases/find/releases.json has the same schema, but may have no release yet. Then every FIND_*
 // placeholder shows the "coming with the first release" state and links to the find-v* GitHub Releases.
-const FIND_ALL_RELEASES = "https://github.com/nobad-studio/Nobad-VPN/releases?q=find-v";
+// NOBAD Find has its own repository since 2026-11-20; releases up to 0.8.5 stay in nobad-studio/Nobad-VPN.
+const FIND_REPOS = ["nobad-studio/find", "nobad-studio/Nobad-VPN"];
+const FIND_ALL_RELEASES = "https://github.com/nobad-studio/find/releases";
 const FIND_PLATFORM = "Windows 10 &amp; 11";
 
 function findValues(manifest) {
@@ -108,11 +110,14 @@ function findValues(manifest) {
   for (const k of ["version", "releaseDate", "downloadUrl", "notesUrl", "sha256", "size"]) {
     if (!cur[k]) throw new Error(`releases/find/releases.json: latest release is missing "${k}"`);
   }
-  const m = /^https:\/\/github\.com\/nobad-studio\/Nobad-VPN\/releases\/download\/find-v([0-9]+\.[0-9]+\.[0-9]+)\/NobadFind-Setup-([0-9]+\.[0-9]+\.[0-9]+)\.exe$/.exec(cur.downloadUrl);
-  if (!m || m[1] !== cur.version || m[2] !== cur.version) {
+  const m = /^https:\/\/github\.com\/(nobad-studio\/(?:find|Nobad-VPN))\/releases\/download\/find-v([0-9]+\.[0-9]+\.[0-9]+)\/NobadFind-Setup-([0-9]+\.[0-9]+\.[0-9]+)\.exe$/.exec(cur.downloadUrl);
+  if (!m || !FIND_REPOS.includes(m[1]) || m[2] !== cur.version || m[3] !== cur.version) {
     throw new Error("releases/find/releases.json: downloadUrl must be this version's NobadFind-Setup .exe on a find-v* GitHub Release");
   }
-  if (!/^https:\/\/github\.com\/nobad-studio\/Nobad-VPN\/releases\/tag\/find-v[0-9.]+$/.test(cur.notesUrl)) {
+  const repo = m[1];
+  // Until the first release from nobad-studio/find, "All releases" lists the find-v* releases in Nobad-VPN.
+  const allReleases = repo === "nobad-studio/find" ? FIND_ALL_RELEASES : `https://github.com/${repo}/releases?q=find-v`;
+  if (cur.notesUrl !== `https://github.com/${repo}/releases/tag/find-v${cur.version}`) {
     throw new Error("releases/find/releases.json: notesUrl must be a find-v* GitHub Release page");
   }
   if (!/^[0-9a-f]{64}$/.test(cur.sha256)) throw new Error("releases/find/releases.json: sha256 must be 64 lowercase hex digits");
@@ -133,12 +138,12 @@ function findValues(manifest) {
       `<a class="download-action" href="/products/find/#download">Get it <span>↗</span></a>`,
     FIND_RELEASE_HTML:
       `<div class="p-status-head p-hot"><div><h3>BUILD AVAILABLE.</h3><p>${esc(cur.summary || "A published release is available. Review its notes and integrity details before installing.")}</p></div><span class="p-badge">● ${esc(String(cur.channel || "stable").toUpperCase())}</span></div>` +
-      `<div class="p-status-row"><div><h4>NOBAD Find ${v}</h4><p>${meta}</p></div><div class="p-actions"><a class="p-btn" href="${url}">Download installer ↗</a><a class="p-btn ghost" href="${esc(cur.notesUrl)}" rel="noopener">Release notes</a><a class="p-btn ghost" href="${all}" rel="noopener">All releases ↗</a></div></div>` +
+      `<div class="p-status-row"><div><h4>NOBAD Find ${v}</h4><p>${meta}</p></div><div class="p-actions"><a class="p-btn" href="${url}">Download installer ↗</a><a class="p-btn ghost" href="${esc(cur.notesUrl)}" rel="noopener">Release notes</a><a class="p-btn ghost" href="${esc(allReleases)}" rel="noopener">All releases ↗</a></div></div>` +
       `<div class="p-history">${history}</div>` +
       `<div class="p-integrity"><h4>Download integrity</h4><p>SHA-256: ${esc(cur.sha256)} | File size: ${esc(cur.size)}. Verify this digest against the downloaded file.</p>` +
       `<h4>How to verify</h4><p>In PowerShell, in the folder you downloaded to:</p><pre><code>Get-FileHash .\\${file} -Algorithm SHA256</code></pre>` +
       `<p>or in Command Prompt: <code>certutil -hashfile ${file} SHA256</code>. The result must match the SHA-256 above and the <a href="${url}.sha256">.sha256 file</a> on the release.</p>` +
-      `<p>To check it was built by NOBAD's release workflow from this version's tag (with the <a href="https://cli.github.com/">GitHub CLI</a>):</p><pre><code>gh attestation verify ${file} -R nobad-studio/Nobad-VPN --signer-workflow nobad-studio/Nobad-VPN/.github/workflows/find-release.yml --source-ref refs/tags/find-v${v} --deny-self-hosted-runners</code></pre>` +
+      `<p>To check it was built by NOBAD's release workflow from this version's tag (with the <a href="https://cli.github.com/">GitHub CLI</a>):</p><pre><code>gh attestation verify ${file} -R ${esc(repo)} --signer-workflow ${esc(repo)}/.github/workflows/find-release.yml --source-ref refs/tags/find-v${v} --deny-self-hosted-runners</code></pre>` +
       `<h4>"Windows protected your PC"</h4><p>Because NOBAD Find isn't code-signed yet, SmartScreen may show this for a new download. If the checksum matches, choose <b>More info</b> → <b>Run anyway</b>.</p></div>`,
   };
 }

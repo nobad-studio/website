@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.9.3",
+  "latest": "0.9.4",
   "releases": [
+    {
+      "version": "0.9.4",
+      "releaseDate": "2026-11-21",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Meaning search works again after a model switch: the new text model takes over at once instead of after days",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v0.9.4/NobadFind-Setup-0.9.4.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v0.9.4",
+      "sha256": "456d9dbc2ed76888c52a0f62a1fafabf3ebcbca2f1453188213f7050746058c4",
+      "size": "39.4 MB"
+    },
     {
       "version": "0.9.3",
       "releaseDate": "2026-11-20",

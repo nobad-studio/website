@@ -251,7 +251,7 @@
           <li><b>Instead of Windows Search</b><span>Optional. Turns Windows Search indexing off and saves its start type, restored with one click or on uninstall.</span></li>
           <li><b>Per-user install</b><span>No admin prompt. The installer knows what’s installed: it upgrades, repairs, or asks before going back to an older version.</span></li>
           <li><b>Updates itself</b><span>Settings → About → Updates: once a day or by hand. Install downloads the new version, checks its size and SHA-256, and installs it, with its real progress (MB, speed, time left); your index and settings are kept.</span></li>
-          <li><b>Optional turbo index</b><span>Reads file names from the drive’s own records through a small elevated helper (one Windows prompt), never file contents. Off by default.</span></li>
+          <li><b>Optional turbo index</b><span>Reads file names from the drive’s own records through a small helper in Program Files that only your account can start: Windows asks once, when you turn it on, not at every start. Never file contents. Off by default.</span></li>
           <li><b>Open source</b><span>MIT licence, built and published by CI from a tagged commit, with a build attestation for every installer.</span></li>
         </ul>
       </section>
@@ -337,7 +337,7 @@
       <div><dt>Optional models</dt><dd>Search by meaning uses a local model you choose in Settings → Models (23 to 282 MB, downloaded once). Photos by what's in them use a local image model (211 or 393 MB). Nothing downloads until you allow it. Models load when you use them and leave memory after a few idle minutes, unless you choose Keep models loaded.</dd></div>
       <div><dt>Index &amp; encryption</dt><dd>The index stays on this PC, encrypted with SQLCipher. Its key is protected by Windows (DPAPI) for your account.</dd></div>
       <div><dt>Never read</dt><dd>Other people's profiles are always out. Secret material (.ssh folders, key files, password stores, browser data, wallets) is off by default and, when you switch it on, only its names are indexed. Windows and app folders are your choice in Settings → What to index.</dd></div>
-      <div><dt>Permissions</dt><dd>Runs as your normal account, never as admin. Using it instead of Windows Search takes one click; Windows asks you once, and one click back restores Windows Search. The optional turbo index asks Windows once per session.</dd></div>
+      <div><dt>Permissions</dt><dd>Runs as your normal account, never as admin. Using it instead of Windows Search takes one click; Windows asks you once, and one click back restores Windows Search. The optional turbo index asks Windows once, when you turn it on (and once after an update that changes its helper).</dd></div>
       <div><dt>Outbound connections</dt><dd>The optional model downloads from Hugging Face, each pinned and checked by SHA-256 and off until you allow it, and the update check: HTTPS to GitHub for nobad-studio/find once a day (off in Settings → About); nothing about your PC or your files is sent. No account, no telemetry.</dd></div>
       <div><dt>Support</dt><dd>Bugs and questions: <a href="https://github.com/nobad-studio/find/issues">GitHub Issues</a>. Security problems: report them privately via <a href="https://github.com/nobad-studio/find/security/advisories/new">private vulnerability reporting</a>. Anything else: <a href="mailto:ludmj99@gmail.com">ludmj99@gmail.com</a>.</dd></div>
     </dl>

@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.9.5",
+  "latest": "0.9.6",
   "releases": [
+    {
+      "version": "0.9.6",
+      "releaseDate": "2026-11-21",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Turbo index asks for administrator once, through a protected helper service",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v0.9.6/NobadFind-Setup-0.9.6.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v0.9.6",
+      "sha256": "517625095b3fdd8c18ed1bac6f0090843ffa1c079a025cff42c84e092145d415",
+      "size": "45.4 MB"
+    },
     {
       "version": "0.9.5",
       "releaseDate": "2026-11-21",

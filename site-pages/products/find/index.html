@@ -149,7 +149,7 @@
 <section class="p-sec" id="all-features" aria-labelledby="allFeaturesTitle">
   <div class="p-wrap">
     <p class="p-label">Full feature list</p>
-    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 63 features of NOBAD Find 0.9.3, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
+    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 64 features of NOBAD Find 0.9.5, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
     <div class="p-cats">
       <section class="p-cat" aria-labelledby="fl1">
         <header><span class="p-cat-n">01</span><h3 id="fl1">Search</h3><span class="p-cat-c">7 features</span></header>
@@ -190,7 +190,7 @@
         <ul>
           <li><b>A native window</b><span>About 130-170 MB in one process; the old web window used about 465 MB in seven (reference PC).</span></li>
           <li><b>Win+Shift+F</b><span>Opens NOBAD Find from anywhere. If a combination is taken on your PC, it picks the next free one and says so.</span></li>
-          <li><b>Search bar</b><span>Like Spotlight: with the window closed, the shortcut opens a small search bar over any app, with files, Windows settings and apps; with the window open, its search box. It can be turned off.</span></li>
+          <li><b>Search bar</b><span>Like Spotlight: with the window closed, the shortcut opens a small search bar over any app, with files, Windows settings and apps, a preview of the selected result, and hints when a model is needed; with the window open, its search box. It can be turned off.</span></li>
           <li><b>Shortcuts you set</b><span>Press the keys you want or type them; NOBAD Find checks first that they’re free. Takes effect at once, or clear it.</span></li>
           <li><b>Windows settings and apps</b><span>About 1,400 settings from Windows’ own catalog, in your Windows language, Control Panel items and your apps, with their version and install folder.</span></li>
           <li><b>Keyboard first</b><span>↑ ↓ to move, Enter to open, Ctrl+Enter to show in folder, Ctrl+C to copy the path, Shift+Delete to forget a result.</span></li>
@@ -215,7 +215,7 @@
           <li><b>Contained workers</b><span>Low CPU, memory and disk priority, efficiency mode when the PC is busy, a hard memory limit and a watchdog. Quitting ends every worker.</span></li>
           <li><b>Fast on a big index</b><span>Under 25 ms a keystroke on a million-file index (reference PC); an older search stops as soon as you type the next letter.</span></li>
           <li><b>Light on memory</b><span>About 35 MB for the main process when idle, and about 17 MB in use while the window is closed.</span></li>
-          <li><b>Indexing page</b><span>Each step as a card with its progress and time left, NOBAD Find’s own CPU, memory, disk and graphics use, every model and every decision.</span></li>
+          <li><b>Indexing page</b><span>Each step as a card with its progress and time left, NOBAD Find’s own CPU, memory, disk and graphics use, every model and every decision, and each of its processes named and explained with its own CPU and memory.</span></li>
         </ul>
       </section>
       <section class="p-cat" aria-labelledby="fl6">
@@ -232,15 +232,16 @@
         </ul>
       </section>
       <section class="p-cat" aria-labelledby="fl7">
-        <header><span class="p-cat-n">07</span><h3 id="fl7">Privacy and security</h3><span class="p-cat-c">8 features</span></header>
+        <header><span class="p-cat-n">07</span><h3 id="fl7">Privacy and security</h3><span class="p-cat-c">9 features</span></header>
         <ul>
           <li><b>Nothing leaves your PC</b><span>No account, no cloud, no telemetry.</span></li>
           <li><b>Encrypted index</b><span>A SQLCipher database whose random key is protected by Windows DPAPI for your account on this PC.</span></li>
           <li><b>Runs as you, never as admin</b><span>It refuses to start elevated. Only the Windows Search switch and the optional turbo index ask Windows, each through a helper that accepts fixed words.</span></li>
           <li><b>Secrets stay unread</b><span>Key files, password stores, browser data, .ssh, wallets: off by default, and only their names even when you switch them on. Other people’s profiles are always out.</span></li>
+          <li><b>Keys &amp; passwords filter</b><span>While secrets are switched on, Kind → Keys &amp; passwords lists those files by name. Their contents are never read.</span></li>
           <li><b>Your exclusions</b><span>Add folders to Never search; Forget removes a result and keeps it out.</span></li>
           <li><b>Files are untrusted</b><span>Zip-bomb checks, XML without external entities, size limits, separate low-priority readers, Windows’ own image decoders. Nothing is ever run.</span></li>
-          <li><b>Search history you control</b><span>Only what you type in NOBAD Find, at most 200, inside the encrypted index. Turn it off or clear it any time.</span></li>
+          <li><b>Search history you control</b><span>Only what you type in NOBAD Find, at most 200, inside the encrypted index; recent searches come from it too, never a plain-text file. Turn it off or clear it any time.</span></li>
           <li><b>Verified downloads only</b><span>Its only connections: the optional model downloads from Hugging Face (pinned, checked by SHA-256) and the update check on GitHub, which you can turn off.</span></li>
         </ul>
       </section>
@@ -249,7 +250,7 @@
         <ul>
           <li><b>Instead of Windows Search</b><span>Optional. Turns Windows Search indexing off and saves its start type, restored with one click or on uninstall.</span></li>
           <li><b>Per-user install</b><span>No admin prompt. The installer knows what’s installed: it upgrades, repairs, or asks before going back to an older version.</span></li>
-          <li><b>Updates itself</b><span>Settings → About → Updates: once a day or by hand. Install downloads the new version, checks its size and SHA-256, and installs it; your index and settings are kept.</span></li>
+          <li><b>Updates itself</b><span>Settings → About → Updates: once a day or by hand. Install downloads the new version, checks its size and SHA-256, and installs it, with its real progress (MB, speed, time left); your index and settings are kept.</span></li>
           <li><b>Optional turbo index</b><span>Reads file names from the drive’s own records through a small elevated helper (one Windows prompt), never file contents. Off by default.</span></li>
           <li><b>Open source</b><span>MIT licence, built and published by CI from a tagged commit, with a build attestation for every installer.</span></li>
         </ul>

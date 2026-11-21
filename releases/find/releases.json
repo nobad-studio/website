@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.9.4",
+  "latest": "0.9.5",
   "releases": [
+    {
+      "version": "0.9.5",
+      "releaseDate": "2026-11-21",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Search bar with preview and faster answers, tray and second-start fix, update progress, every process explained, What to index cards, Keys & passwords filter (names only)",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v0.9.5/NobadFind-Setup-0.9.5.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v0.9.5",
+      "sha256": "36f0f2f6771734542f0d3a32c76aec044975f8b3a9e55acf075426d58a87dab9",
+      "size": "39.4 MB"
+    },
     {
       "version": "0.9.4",
       "releaseDate": "2026-11-21",

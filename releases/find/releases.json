@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "0.9.6",
+  "latest": "1.0.0",
   "releases": [
+    {
+      "version": "1.0.0",
+      "releaseDate": "2026-11-22",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Photo search finds the right photos more often; the SigLIP 2 photo model is fixed",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v1.0.0/NobadFind-Setup-1.0.0.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v1.0.0",
+      "sha256": "394e63b2e88f340198077ca4ce7f9b14c05c3c2a6588fbdae3dafe101f3cd83f",
+      "size": "45.4 MB"
+    },
     {
       "version": "0.9.6",
       "releaseDate": "2026-11-21",

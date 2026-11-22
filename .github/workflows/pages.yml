@@ -50,7 +50,7 @@ jobs:
           bad = []
           for p in pub.rglob("*.html"):
               s = p.read_text(encoding="utf-8")
-              for pat in (r"\{\{[A-Z0-9_]+\}\}", r"\bv1\.0\b", "Replace the contact", "NO PUBLIC BUILD", "hello@nobad\.dev",
+              for pat in (r"\{\{[A-Z0-9_]+\}\}", r"\bv1\.0\b(?!\.\d)", "Replace the contact", "NO PUBLIC BUILD", "hello@nobad\.dev",
                           "No installer is linked", "official NOBAD contact channel", "replace with your"):
                   if re.search(pat, s):
                       bad.append(f"{p}: {pat}")

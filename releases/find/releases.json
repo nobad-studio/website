@@ -1,8 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "nobad-find",
-  "latest": "1.1.0",
+  "latest": "1.1.1",
   "releases": [
+    {
+      "version": "1.1.1",
+      "releaseDate": "2026-11-23",
+      "channel": "stable",
+      "platform": "Windows 10 (1809+) / 11",
+      "architecture": "x64",
+      "summary": "Index, Models and What to index pages open at once on a big index; searching no longer times out while they load.",
+      "downloadUrl": "https://github.com/nobad-studio/find/releases/download/find-v1.1.1/NobadFind-Setup-1.1.1.exe",
+      "notesUrl": "https://github.com/nobad-studio/find/releases/tag/find-v1.1.1",
+      "sha256": "cad10b0c501016b7f4033107a967cd9ddea71af9f59772fcb83755dd15910721",
+      "size": "45.5 MB"
+    },
     {
       "version": "1.1.0",
       "releaseDate": "2026-11-23",

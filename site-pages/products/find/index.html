@@ -118,6 +118,7 @@
       <article class="p-feat"><span class="k">Content</span><h3>The words inside</h3><p>Documents, PDFs, Office and ODF files, EPUB, code, notes and e-mail files (.eml, .mbox).</p></article>
       <article class="p-feat"><span class="k">Meaning</span><h3>By meaning</h3><p>Find a file by what it's about, not only its exact words. Optional local models from 23 MB; Settings → Models recommends one for your PC.</p></article>
       <article class="p-feat"><span class="k">Photos</span><h3>What's in a photo</h3><p>Search your photos by what they show. An optional local image model (211 or 481 MB), downloaded once.</p></article>
+      <article class="p-feat p-hot"><span class="k">Talk</span><h3>Talk about a photo</h3><p>Ask what a photo shows or what's written on it, or compare two. An optional small vision model (520 MB) answers on this PC, word by word. Nothing downloads until you say so.</p></article>
       <article class="p-feat"><span class="k">OCR</span><h3>Words in pictures</h3><p>Text in photos, screenshots and scanned PDFs is read with Windows' built-in OCR, offline.</p></article>
       <article class="p-feat"><span class="k">Ask</span><h3>Plain questions</h3><p>"2 boys in an image in downloads", "list all pdf here", "pdf in D:\Work bigger than 1 mb", "newest": kinds, dates, sizes, folders and order, in words.</p></article>
       <article class="p-feat"><span class="k">Filter</span><h3>Filter bar</h3><p>Narrow the results by kind, date, size and folder, and choose the order.</p></article>
@@ -149,15 +150,16 @@
 <section class="p-sec" id="all-features" aria-labelledby="allFeaturesTitle">
   <div class="p-wrap">
     <p class="p-label">Full feature list</p>
-    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 64 features of NOBAD Find 0.9.5, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
+    <div class="p-head"><h2 id="allFeaturesTitle">Every feature, in detail.</h2><p>All 65 features of NOBAD Find 1.1.0, grouped by what they do. Optional ones are off until you switch them on; figures were measured on the reference PC.</p></div>
     <div class="p-cats">
       <section class="p-cat" aria-labelledby="fl1">
-        <header><span class="p-cat-n">01</span><h3 id="fl1">Search</h3><span class="p-cat-c">7 features</span></header>
+        <header><span class="p-cat-n">01</span><h3 id="fl1">Search</h3><span class="p-cat-c">8 features</span></header>
         <ul>
           <li><b>File and folder names</b><span>Any part of a name, across your profile and every fixed drive, as you type.</span></li>
           <li><b>The words inside files</b><span>Word, ODF and RTF documents, spreadsheets, slides, PDFs, EPUB, code, notes and e-mail files (.eml, .mbox). Word forms match: “landlords” finds “landlord”.</span></li>
           <li><b>Search by meaning</b><span>Optional. “rent” finds “lease agreement”, and “power bill” finds electricity-bill-march.pdf.</span></li>
           <li><b>Photos by what they show</b><span>Optional. “dog on a beach” finds IMG_0042.jpg, even with no words in it. Photos that only may match come after the sure ones, marked as such.</span></li>
+          <li><b>Talk about a photo</b><span>Optional. On a photo's detail pane: describe it, ask about it or compare two. “What’s written here?” shows the text Windows OCR read first. SmolVLM2 (520 MB) or, for deeper answers, Qwen3-VL 2B (1,481 MB) run on this PC with the llama.cpp runtime. A kept description makes the photo findable by its words.</span></li>
           <li><b>Words in pictures</b><span>Screenshots, photos of documents and scanned PDFs are read with Windows’ built-in OCR, offline.</span></li>
           <li><b>Every Windows setting</b><span>About 1,400 settings from Windows’ own catalog in your language (“battery percentage”, “edit environment variables”), opened from the results.</span></li>
           <li><b>Why it matched</b><span>Every result says why it was found: its name, its text, its meaning or a filter.</span></li>
